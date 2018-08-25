@@ -17,7 +17,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 			</ul>
 		</div><?php endif; ?>
 		<?php if($this->options->fcode && !empty($this->options->fcode) ): ?><div class="fcode"><?php $this->options->fcode(); ?></div><?php endif; ?>
-		<p>&copy; <?php echo date("Y"); ?> <a href="<?php $this->options ->siteUrl(); ?>"><?php $this->options->title();?></a>&nbsp; Powered by <a href="http://www.typecho.org/" target="_blank">Typecho</a>
+		<p>&copy; <?php echo date("Y"); ?> <a href="<?php $this->options ->siteUrl(); ?>"><?php $this->options->title();?></a>&nbsp;|&nbsp;Powered by <a href="http://www.typecho.org/" target="_blank">Typecho</a>&nbsp;|&nbsp;Theme <a href="https://github.com/hiCasper/Typecho-theme-DUX" target="_blank">DUX</a>
 </p>
 		<div class="hide"></div>	
 	</div>
@@ -36,8 +36,8 @@ window.jsui={
     url_rp: '<?php $this->options->adminUrl('login.php'); ?>'
 };
 </script>
-<script type='text/javascript' src='//cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js?ver=0.1'></script>
-<script type='text/javascript' src='<?php $this->options->themeUrl('js/loader.js?ver=0.1'); ?>'></script>
+<script type='text/javascript' src='//cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js '></script>
+<script type='text/javascript' src='<?php $this->options->themeUrl('js/loader.js '); ?>'></script>
 <?php if($this->options->GoogleAnalytics): ?>
 <?php $this->options->GoogleAnalytics(); ?>
 <?php endif; ?>

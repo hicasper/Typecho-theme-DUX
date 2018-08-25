@@ -55,7 +55,7 @@ body{
 	right: 0;
 	z-index: 9;
 	background-color: #fff;
-	padding: 55px 0 20px;
+	padding: 20px 0 20px;
 	margin-bottom: 15px;
 	border-bottom: 1px solid #EAEAEA;
 	/*box-shadow: 0 1px 4px rgba(0,0,0,.05);*/
@@ -104,7 +104,7 @@ body{
 }
 
 .single .content{
-	padding: 0 20px;
+	padding: 0 30px;
 	background-color: #fff;
 	border: 1px solid #eaeaea;
 	border-radius: 4px;
@@ -175,40 +175,6 @@ body{
 .site-navbar .fa-angle-down{width: 11px;}
 
 .search-on .site-navbar li.navto-search a{color: #45B6F7;}
-
-.topbar .fa{width: 14px;}
-.topbar .fa-angle-down{width: 9px;}
-.topbar{
-	position: absolute;
-	top: -39px;
-	left: 0;right: 0;
-	margin-bottom: 20px;
-	margin-right: -15px;
-	color: #999;
-}
-.topbar a{
-	color: #999;
-}
-.topbar a:hover{
-	color: #45B6F7;
-}
-.topmenu{
-	float: right;
-}
-.topmenu li{
-	position: relative;
-	float: left;
-}
-.topmenu li:hover{z-index: 2}
-.topmenu a{
-	display: block;
-	padding: 0 15px;
-	color: #999;
-}
-
-
-.topmenu .red{color: #FF5E52;display: inline-block;}
-.topmenu .red:hover{color: #FF5E52;text-decoration: underline;}
 
 .site-nav .sub-menu{display: none;position: absolute;top: 100%;left: 0;background-color: #fff;font-size: 12px;padding: 6px 0;border: 1px solid #ddd;box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);line-height: 32px;width: 132px;font-weight: bold;border-radius: 4px;}
 .site-nav ul .sub-menu{left: 100%;top: -7px;border-radius: 0}
@@ -802,7 +768,6 @@ body{
 .url:hover{color:#60c4fd;text-decoration:underline;opacity: 0.85;
 filter:alpha(opacity=85);}
 .comt-meta{font-size:12px;color:#bbb;}
-.comt-meta .signin-loader{margin-left: 10px;}
 .comment-reply-link{font-size:12px;color:#bbb;display:none}
 .comment:hover>.comt-main .comment-reply-link{display:inline-block;margin-left: 5px;}
 .comment pre{margin:3px 0 5px;padding:7px 10px;border-radius:1px}
@@ -843,7 +808,7 @@ filter:alpha(opacity=85);}
 .comt-error{background: #FF5E52;}
 
 .comt-comterinfo{padding:15px 0;text-align: center;}
-.comt-comterinfo ul{padding: 0;margin: 0;list-style: none;text-align: left;display: inline-block;}
+.comt-comterinfo ul{padding: 0;margin: 0;list-style: none;text-align: left;display: inline;}
 .comt-comterinfo li{margin-bottom:5px}
 .comt-comterinfo input{margin-right:10px;position:relative;*bottom:-3px;border: 2px solid #CCD4D9;border-radius: 2px;height:34px;padding: 3px 5px;outline: none;width: 220px;box-shadow: none;*height: 20px;}
 #cancel-comment-reply-link{display:none;font-size:12px;text-align: center;margin-top: 7px;color: #999;}
@@ -1577,149 +1542,6 @@ filter:alpha(opacity=85);}
 
 /*  ======================================================================================================== */
 
-.sign {
-	position: fixed;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-	/*background-color:rgba(48,58,65,0.9);*/
-	z-index: 999;
-	-webkit-perspective: 500px;
-	-moz-perspective: 500px;
-	-ms-perspective: 500px;
-	-o-perspective: 500px;
-	perspective: 500px;
-	-webkit-transition:all 0.3s;
-	-moz-transition:all 0.3s;
-	-ms-transition:all 0.3s;
-	-o-transition:all 0.3s;
-	transition:all 0.3s;
-	opacity: 0.0;
-	visibility: hidden;
-	overflow: auto;
-}
-.sign-mask{
-	position: fixed;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-	background-color: #313B43;
-	opacity: 0.90;
-	filter:alpha(opacity=90);
-}
-.sign .container {
-	background-color:#e7ebef;
-	width:400px;
-	position: absolute;
-	height: 360px;
-	top:0;
-	left:0;
-	right:0;
-	bottom:0;
-	z-index: 9;
-	margin:auto;
-	-webkit-transition:all 0.3s;
-	-moz-transition:all 0.3s;
-	-ms-transition:all 0.3s;
-	-o-transition:all 0.3s;
-	transition:all 0.3s;
-	-webkit-transform: rotateX(-20deg) translateZ(200px) translateY(20%);
-	-moz-transform: rotateX(-20deg) translateZ(200px) translateY(20%);
-	-ms-transform: rotateX(-20deg) translateZ(200px) translateY(20%);
-	-o-transform: rotateX(-20deg) translateZ(200px) translateY(20%);
-	transform: rotateX(-20deg) translateZ(200px) translateY(20%);
-}
-.sign .close-link {
-	color:#fff;
-	position: absolute;
-	left: 100%;
-	top:0;
-	padding:22px 0;
-	font-size: 18px;
-	background-color: #45B6F7;
-	display: block;
-	opacity: 0.85;
-	filter:alpha(opacity=85);
-	width: 70px;
-	text-align: center;
-}
-.sign .close-link:hover {
-	color:#fff;
-	opacity: 1;
-	filter:alpha(opacity=100);
-}
-
-.sign form{
-	padding: 0 50px;
-}
-.sign h3{
-	margin: 0 -50px 20px;
-	background-color: #fff;
-	padding: 25px 50px;
-	font-size: 18px;
-	color: #45B6F7;
-}
-.sign h3 small{
-	float: right;
-	cursor: pointer;
-	color: #bbb;
-	font-size: 14px;
-	margin-top: 4px;
-}
-.sign h6{
-	margin-bottom: 15px;
-}
-.sign .sign-submit .btn{
-	float: right;
-}
-.sign .sign-submit label{
-	margin-top: 8px;
-	font-weight: normal;
-	font-size: 12px;
-}
-.sign .sign-submit label input{
-	position: relative;
-	top: 2px;
-	margin-right: 4px;
-}
-
-.sign-tips{
-	position: absolute;
-	bottom: 0;
-	background-color: #FD6E6E;
-	left: 0;
-	right: 0;
-	height: 0;
-	line-height: 29px;
-	padding: 0 50px;
-	color: #fff;
-	font-size: 12px;
-	overflow: hidden;
-}
-
-
-.sign-show .sign {
-	opacity: 1.0;
-	visibility: visible;
-}
-.sign-show .sign .container {
-	-webkit-transform: rotateX(-0deg) translateZ(0) translateY(0%);
-	-moz-transform: rotateX(-0deg) translateZ(0) translateY(0%);
-	-ms-transform: rotateX(-0deg) translateZ(0) translateY(0%);
-	-o-transform: rotateX(-0deg) translateZ(0) translateY(0%);
-	transform: rotateX(-0deg) translateZ(0) translateY(0%);
-}
-body.sign-show {
-	height: 100%;
-	width: 100%;
-	overflow: hidden;
-}
-
-
-/*  ======================================================================================================== */
-
 .footer{
 	position: relative;
 	z-index: 9;
@@ -2003,7 +1825,6 @@ pre.prettyprint.linenums ol li {
 .article-paging a:hover span{border-color: #ccc;background-color: #fbfbfb;}
 
 
-.nav-fixed .header .topbar{display: none;}
 .nav-fixed .header{position: fixed;top: 0;left: 0;right: 0;padding: 15px 0;z-index: 999}
 .nav-fixed .site-navbar{margin-top: 5px;}
 
@@ -2034,9 +1855,6 @@ pre.prettyprint.linenums ol li {
 
 /*  ======================================================================================================== */
 
-@media (max-width: 1320px) {
-	.menusns .sub-menu{right: 0;left:auto;}
-}
 @media (max-width: 1240px) {
 	.container{margin: 0 15px;}
 	.pageheader{padding: 15px 0;}
@@ -2085,9 +1903,6 @@ pre.prettyprint.linenums ol li {
 	.logo a{max-width: 180px;margin: 0 auto;text-align: center;}
 	.logo img{margin: 0 auto}
 
-	.topbar{display: none;}
-
-	.topbar-user{display: none;	}
 
 	.site-navbar > li{display: none;}
 	

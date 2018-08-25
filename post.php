@@ -18,7 +18,7 @@
 	
 	<!--div class="post-linkto"><a class="btn btn-primary btn-lg" href="<?php $this->options ->siteUrl(); ?>" target="_blank" rel="external nofollow">直达链接</a></div-->
 	
-	<div class="post-copyright">未经允许不得转载：<a href="<?php $this->options ->siteUrl(); ?>"><?php $this->options->title();?></a> &raquo; <a href="<?php $this->permalink(); ?>"><?php $this->title() ?></a></div>
+	<div class="post-copyright">本原创文章未经允许不得转载 | 当前页面：<a href="<?php $this->options ->siteUrl(); ?>"><?php $this->options->title();?></a> &raquo; <a href="<?php $this->permalink(); ?>"><?php $this->title() ?></a></div>
 	
 	
 	<div class="article-tags">标签：<?php $this->tags(' ', true, '<a>没有标签</a>'); ?></div>

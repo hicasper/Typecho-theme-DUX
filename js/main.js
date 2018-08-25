@@ -244,18 +244,6 @@ $('.user-welcome').tooltip({
 })
 
 
-
-/* 
- * sign
- * ====================================================
-*/
-if (!jsui.bd.hasClass('logged-in')) {
-    tbquire(['signpop'], function(signpop) {
-        signpop.init()
-    })
-}
-
-
 /* 
  * single
  * ====================================================

@@ -6,26 +6,25 @@
     <meta http-equiv="x-dns-prefetch-control" content="on"><?php if ($this->options->cdn_add): ?>
     <link rel="dns-prefetch" href="<?php $this->options->cdn_add(); ?>" /><?php endif; ?>
     <link rel="dns-prefetch" href="//cdn.bootcss.com" />
-    <link rel="dns-prefetch" href="//secure.gravatar.com" />
-	<link rel="dns-prefetch" href="//apps.bdimg.com"><?php endif; ?>
+    <link rel="dns-prefetch" href="//cn.gravatar.com" /><?php endif; ?>
 	<meta http-equiv="X-UA-Compatible" content="IE=11,IE=10,IE=9,IE=8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
 	<meta name="apple-mobile-web-app-title" content="<?php $this->options->title();?>">
 	<meta http-equiv="Cache-Control" content="no-siteapp">
 	<title><?php $this->archiveTitle(array('category'=>_t(' %s '),'search'=>_t(' %s '),'tag'=>_t(' %s '),'author'=>_t(' %s ')),'',' - ');?> <?php $this->options->title();?></title>
 	<meta name='robots' content='noindex,follow' />
-	<link rel='stylesheet' id='_bootstrap-css'  href='//cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css?ver=0.1' type='text/css' media='all' />
-	<link rel='stylesheet' id='_fontawesome-css'  href='//cdn.bootcss.com/font-awesome/4.2.0/css/font-awesome.min.css?ver=0.1' type='text/css' media='all' />
-	<link rel='stylesheet' id='_main-css'  href='<?php $this->options->themeUrl('css/main.css?ver=0.1'); ?>' type='text/css' media='all' />
+	<link rel='stylesheet' id='_bootstrap-css'  href='//cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css ' type='text/css' media='all' />
+	<link rel='stylesheet' id='_fontawesome-css'  href='//cdn.bootcss.com/font-awesome/4.2.0/css/font-awesome.min.css ' type='text/css' media='all' />
+	<link rel='stylesheet' id='_main-css'  href='<?php $this->options->themeUrl('css/main.css '); ?>' type='text/css' media='all' />
 	<link rel='stylesheet' href='<?php $this->options->themeUrl('css/custom.css'); ?>' type='text/css' media='all' />
-	<script type='text/javascript' src='//cdn.bootcss.com/jquery/1.9.1/jquery.min.js?ver=0.1'></script>
+	<script type='text/javascript' src='//cdn.bootcss.com/jquery/1.9.1/jquery.min.js '></script>
 	<!--加载进度条-->
 	<link href="//cdn.bootcss.com/pace/1.0.2/themes/orange/pace-theme-flash.css" rel="stylesheet" />
 	<script> paceOptions = { elements: {selectors: ['#footer']}};</script>
 	<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
 	<!--加载进度条-->
 	<link rel="shortcut icon" href="<?php $this->options->themeUrl('favicon.ico'); ?>">
-	<!--[if lt IE 9]><script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+	<!--[if lt IE 9]><script src="//cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script><![endif]-->
 	<?php $this->header('keywords=&generator=&template=&pingback=&xmlrpc=&wlw=&commentReply=&rss1=&rss2=&atom='); ?>
 </head>
 <body class="<?php if ($this->is('index')) : ?>home<?php elseif ($this->is('post')) : ?>single<?php elseif ($this->is('page')) : ?>page<?php elseif ($this->is('archive')) : ?>archive<?php else: ?><?php endif; ?>">
@@ -52,22 +51,23 @@ $i=0;  $b_arr = fa_ico();
 <li><a href="<?php $cats->permalink()?>"><?php echo $b_arr[$i]; ?> <?php $cats->name()?></a></li>
 <?php $i++; ?>
 <?php endwhile; ?>
-    <!--<li>
+    <li>
       <a>
-        <i class="fa fa-file-text-o"></i>独立页面</a>
+        <i class="fa fa-file-text-o"></i>页面</a>
       <ul class="sub-menu"><?php /* 头部大导航条下二级菜单 一般li格式 */ ?>
         <?php $this->widget('Widget_Contents_Page_List')->to($pages); ?>
             <?php while($pages->next()): ?>
             <li <?php if($this->is('page', $pages->slug)): ?> class="current-menu-item"<?php endif; ?>><a href="<?php $pages->permalink(); ?>"><?php $pages->title(); ?></a></li>
             <?php endwhile; ?>
       </ul>
-    </li>-->
+    </li>
     <li class="navto-search">
       <a href="javascript:;" class="search-show active">
         <i class="fa fa-search"></i>
       </a>
     </li>
   </ul>
+  <!--
   <div class="topbar">
     <ul class="site-nav topmenu"> <?php /* 头部小导航条 一般li格式*/ ?>
 	<?php $this->widget('Widget_Contents_Page_List')->to($pages); ?>
@@ -104,7 +104,9 @@ $i=0;  $b_arr = fa_ico();
 	<a class="signup-loader" href="<?php $this->options ->adminUrl('register.php'); ?>"><?php _e('我要注册'); ?></a>
     <?php endif; ?>
 	</div>
-  <i class="fa fa-bars m-icon-nav"></i>
+    -->
+    <i class="fa fa-bars m-icon-nav"></i>
+
 </div>
 </header>
 <div class="site-search">

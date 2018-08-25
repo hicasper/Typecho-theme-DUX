@@ -263,7 +263,7 @@ function sitebar_ad($obj) {
     if (!empty($options)) {
         $text = $options;
     }else{
-		$text="http://themebetter.com/theme/dux\nDUX主题 新一代主题\nDUX Wordpress主题是大前端当前使用主题，是大前端积累多年Wordpress主题经验设计而成；更加扁平的风格和干净白色的架构会让网站显得内涵而出色...";
+		$text="https://github.com/hiCasper/Typecho-theme-DUX\nDUX主题 新一代主题\nDUX for Typecho";
 	}
 	$b_arr = explode("\n", $text);
 		
