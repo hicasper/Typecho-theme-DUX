@@ -29,7 +29,7 @@ if ($comments->levels > 0) {
 $comments->alt(' odd', ' even');
 ?>">
 	<?php
-        $host = 'cn.gravatar.com';
+        $host = '//cn.gravatar.com';
         $url = '/avatar/';
         $size = '50';
         $rating = Helper::options()->commentsAvatarRating;
