@@ -43,7 +43,7 @@
     </div>
     <?php endif; ?>
     <?php if (!empty($this->options->sidebarBlock) && in_array('ShowTags', $this->options->sidebarBlock)): ?>
-    <div class="widget widget_ui_tags" style="display:none">
+    <div class="widget widget_ui_tags">
       <h3>标签云</h3>
       <div class="items"><?php $this->widget('Widget_Metas_Tag_Cloud', 'ignoreZeroCount=1&limit=20')->to($tags); ?>
       <?php while($tags->next()): ?>

@@ -23,9 +23,12 @@
 	</header>
 	<article class="article-content">
 	</article>
-	<div class="tag-clouds"><?php $this->widget('Widget_Metas_Tag_Cloud', 'ignoreZeroCount=1&limit=30')->to($tags); ?><?php while($tags->next()): ?>
-<a href="<?php $tags->permalink(); ?>"><?php $tags->name(); ?> （<?php $tags->count(); ?>）</a>
-<?php endwhile; ?></div>
+	<div class="tag-clouds">
+<?php $this->widget('Widget_Metas_Tag_Cloud', 'ignoreZeroCount=1&limit=30')->to($tags); ?>
+<?php while($tags->next()): ?>
+		<a href="<?php $tags->permalink(); ?>"><?php $tags->name(); ?>（<?php $tags->count(); ?>）</a>
+<?php endwhile; ?>
+	</div>
 
 </div>
 </div>
