@@ -35,8 +35,7 @@
         <?php while($comments->next()): ?>
         <li>
           <a href="<?php $comments->permalink(); ?>" title="<?php $comments->title(); ?>上的评论">
-            <?php $comments->gravatar('50', ''); ?>
-            <strong><?php $comments->author(false); ?></strong>(<?php $comments->date('m-d'); ?>)说：
+            <strong><?php $comments->author(false); ?></strong> (<?php $comments->date('m-d'); ?>) 说：
             <br><?php $comments->excerpt(22, '...'); ?></a></li>
         <?php endwhile; ?>
       </ul>
