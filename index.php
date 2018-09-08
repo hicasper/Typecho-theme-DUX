@@ -19,7 +19,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 	<?php endif; ?>
 	<!--幻灯片结束--><?php endif; ?>
     <?php hotpost(); ?> <?php //置顶文章 ?>
-    <div class="pagetitle">
+    <div class="title">
         <h3>最新发布</h3>
 		<?php if($this->options->smallbanner && !empty($this->options->smallbanner) ): ?>
         <div class="more"><?php $this->options->smallbanner(); ?></div><?php endif; ?>
