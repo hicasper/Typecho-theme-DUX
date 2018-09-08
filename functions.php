@@ -10,6 +10,9 @@ function themeConfig($form) {
     $logotext = new Typecho_Widget_Helper_Form_Element_Text('logotext', null, NULL, _t('站点说明'), _t('logo 旁边的两行说明 以&lt;br&gt;换行'));
     $form->addInput($logotext);
 
+    $customcss = new Typecho_Widget_Helper_Form_Element_Text('customcss', null, NULL, _t('自定义样式'), _t('已经包含style标签'));
+    $form->addInput($customcss);
+
     $DnsPrefetch = new Typecho_Widget_Helper_Form_Element_Radio('DnsPrefetch',
         array('able' => _t('启用'),
             'disable' => _t('禁止'),
