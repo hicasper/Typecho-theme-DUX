@@ -5,7 +5,7 @@
  * @package DUX主题
  * @author 大前端
  * @version 0.1
- * @link http://www.daqianduan.com/
+ * @link https://github.com/hiCasper/Typecho-theme-DUX
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
  $this->need('header.php');?>
