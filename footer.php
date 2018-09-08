@@ -2,11 +2,13 @@
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 ?>
     <!--footer-->
-<?php if($this->options->footad && !empty($this->options->footad) ): ?><div class="branding branding-black">
+<?php if($this->options->footad && !empty($this->options->footad) ): ?>
+<div class="branding branding-black">
 	<div class="container">
 		<?php $this->options->footad(); ?>
 	</div>
-</div><?php endif; ?>
+</div>
+<?php endif; ?>
 <footer id="footer" class="footer">
 	<div class="container">
 		<?php if($this->options->flinks && !empty($this->options->flinks) ): ?>
@@ -16,9 +18,18 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 				<?php $this->options->flinks(); ?>
 			</ul>
 		</div><?php endif; ?>
-		<?php if($this->options->fcode && !empty($this->options->fcode) ): ?><div class="fcode"><?php $this->options->fcode(); ?></div><?php endif; ?>
-		<p>&copy; <?php echo date("Y"); ?> <a href="<?php $this->options ->siteUrl(); ?>"><?php $this->options->title();?></a>&nbsp;|&nbsp;Powered by <a href="http://www.typecho.org/" target="_blank">Typecho</a>&nbsp;|&nbsp;Theme <a href="https://github.com/hiCasper/Typecho-theme-DUX" target="_blank">DUX</a>
-</p>
+		<?php if($this->options->fcode && !empty($this->options->fcode) ): ?>
+		<div class="fcode"><?php $this->options->fcode(); ?></div>
+		<?php endif; ?>
+		<div class="copyright">
+		    <p>
+				&copy; <?php echo date("Y"); ?> <a href="<?php $this->options ->siteUrl(); ?>"><?php $this->options->title();?></a>
+				<?php if($this->options->miitbeian): ?> | <a href="http://www.miitbeian.gov.cn/" target="_blank" rel="nofollow"><?php $this->options->miitbeian(); ?></a><?php endif; ?>
+				<br>
+				Powered by <a href="http://www.typecho.org/" target="_blank">Typecho</a> | 
+				Theme <a href="https://github.com/hiCasper/Typecho-theme-DUX" target="_blank">DUX</a>
+		    </p>
+		</div>
 		<div class="hide"></div>	
 	</div>
 </footer>

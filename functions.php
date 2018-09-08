@@ -3,31 +3,31 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
 /* 后台设置 */
 function themeConfig($form) {
-	//header部分
+    //header部分
     $logoUrl = new Typecho_Widget_Helper_Form_Element_Text('logoUrl', NULL, NULL, _t('站点LOGO地址'), _t('在这里填入一个图片URL地址, 以在网站标题前加上一个LOGO'));
-	$form->addInput($logoUrl->addRule('xssCheck', _t('请不要在图片链接中使用特殊字符')));
+    $form->addInput($logoUrl->addRule('xssCheck', _t('请不要在图片链接中使用特殊字符')));
 
-	$logotext = new Typecho_Widget_Helper_Form_Element_Text('logotext', null, NULL, _t('站点说明'), _t('logo 旁边的两行说明 以&lt;br&gt;换行'));
-	$form->addInput($logotext);
+    $logotext = new Typecho_Widget_Helper_Form_Element_Text('logotext', null, NULL, _t('站点说明'), _t('logo 旁边的两行说明 以&lt;br&gt;换行'));
+    $form->addInput($logotext);
 
-	$DnsPrefetch = new Typecho_Widget_Helper_Form_Element_Radio('DnsPrefetch',
+    $DnsPrefetch = new Typecho_Widget_Helper_Form_Element_Radio('DnsPrefetch',
         array('able' => _t('启用'),
             'disable' => _t('禁止'),
         ),
         'disable', _t('DNS预解析加速'), _t('默认禁止，启用则会对CDN资源和Gravatar进行加速'));
     $form->addInput($DnsPrefetch);
 
-	$fatext = new Typecho_Widget_Helper_Form_Element_Textarea('fatext', NULL, NULL, _t('顶部导航栏fa图标'), _t('顶部导航栏fa图标，&lt;i class="fa fa-plug"&gt;&lt;/i&gt; 格式一行一个<br>和导航条菜单项按顺序匹配,用法参见<a href="http://www.yeahzan.com/fa/facss.html" target="_blank">FA图标CSS分类参考</a>'));
+    $fatext = new Typecho_Widget_Helper_Form_Element_Textarea('fatext', NULL, NULL, _t('顶部导航栏fa图标'), _t('顶部导航栏fa图标，&lt;i class="fa fa-plug"&gt;&lt;/i&gt; 格式一行一个<br>和导航条菜单项按顺序匹配,用法参见<a href="http://www.yeahzan.com/fa/facss.html" target="_blank">FA图标CSS分类参考</a>'));
     $form->addInput($fatext);
 
     $tuijian = new Typecho_Widget_Helper_Form_Element_Text('tj_cid', NULL, NULL, _t('今日观点'), _t('请输入要置顶展示文章的cid'));
     $form->addInput($tuijian);
-	//首页文章列表上的导航代码
-	$smallbanner = new Typecho_Widget_Helper_Form_Element_Textarea('smallbanner', NULL, NULL, _t('首页中部小菜单'), _t('填写导航条代码 A链接格式即可'));
+    //首页文章列表上的导航代码
+    $smallbanner = new Typecho_Widget_Helper_Form_Element_Textarea('smallbanner', NULL, NULL, _t('首页中部小菜单'), _t('填写导航条代码 A链接格式即可'));
     $form->addInput($smallbanner);
-	
-	//幻灯片
-	$Slider = new Typecho_Widget_Helper_Form_Element_Radio('Slider',
+    
+    //幻灯片
+    $Slider = new Typecho_Widget_Helper_Form_Element_Radio('Slider',
         array('SliderTrue'=>_t('开启'),'SliderFalse'=>_t('关闭')),
         'SliderFalse',
         _t("幻灯片开关"),
@@ -35,61 +35,63 @@ function themeConfig($form) {
         );
     $form->addInput($Slider); 
 
-	$slidercode = new Typecho_Widget_Helper_Form_Element_Textarea('slidercode', NULL, NULL, _t('幻灯片代码'), _t('请按此格式填写，展示几个就填几行&lt;a href="你的链接"&gt; &lt;img src="图片链接" width="100%" /&gt;&lt;/a&gt;'));
-	$form->addInput($slidercode);
+    $slidercode = new Typecho_Widget_Helper_Form_Element_Textarea('slidercode', NULL, NULL, _t('幻灯片代码'), _t('请按此格式填写，展示几个就填几行&lt;a href="你的链接"&gt; &lt;img src="图片链接" width="100%" /&gt;&lt;/a&gt;'));
+    $form->addInput($slidercode);
 
-	
-	//侧边栏
+    
+    //侧边栏
     $sidebarBlock = new Typecho_Widget_Helper_Form_Element_Checkbox('sidebarBlock', 
     array('ShowRecentPosts' => _t('最新文章'),
     'ShowCategory' => _t('推荐链接，广告位'),
     'ShowRecentComments' => _t('最新评论'),
-	'ShowTags' => _t('标签云')),
+    'ShowTags' => _t('标签云')),
     array('ShowRecentPosts', 'ShowCategory', 'ShowRecentComments', 'ShowTags'), _t('侧边栏显示'));    
     $form->addInput($sidebarBlock->multiMode());
-	$sidebarAD = new Typecho_Widget_Helper_Form_Element_Textarea('sidebarAD', NULL, NULL, _t('侧边栏推荐位蓝色'), _t('请按固定格式填写，否则会造成错乱，可添加多个，第一行是广告的链接地址，第二行是广告标题，第三行是广告内容<br>例如:<br>http://themebetter.com/theme/dux<br>DUX主题 新一代主题<br>DUX Wordpress主题是大前端当前使用主题，是大前端积累多年Wordpress主题经验设计而成；更加扁平的风格和干净白色的架构会让网站显得内涵而出色...'));
+    $sidebarAD = new Typecho_Widget_Helper_Form_Element_Textarea('sidebarAD', NULL, NULL, _t('侧边栏推荐位蓝色'), _t('请按固定格式填写，否则会造成错乱，可添加多个，第一行是广告的链接地址，第二行是广告标题，第三行是广告内容<br>例如:<br>http://themebetter.com/theme/dux<br>DUX主题 新一代主题<br>DUX Wordpress主题是大前端当前使用主题，是大前端积累多年Wordpress主题经验设计而成；更加扁平的风格和干净白色的架构会让网站显得内涵而出色...'));
     $form->addInput($sidebarAD);
     $sitebar_fu = new Typecho_Widget_Helper_Form_Element_Text('sitebar_fu', NULL, NULL, _t('侧边栏浮动'), _t('请输入要浮动的侧边栏模块序号并使用英文逗号分隔，例如1,3 代表第1和第3块侧边栏会浮动'));
-    $form->addInput($sitebar_fu);	
+    $form->addInput($sitebar_fu);    
 
-	//社交
+    //社交
     $socialweixin = new Typecho_Widget_Helper_Form_Element_Text('socialweixin', NULL, NULL, _t('输入微信二维码链接'), _t('在这里输入微信二维码链接,图片格式,支持 http:// 或 https:// 或 //'));
     $form->addInput($socialweixin->addRule('xssCheck', _t('请不要在图片链接中使用特殊字符')));
-	$socialweibo = new Typecho_Widget_Helper_Form_Element_Text('socialweibo', NULL, NULL, _t('输入微博链接'), _t('在这里输入微博链接,支持 http:// 或 https:// 或 //'));
+    $socialweibo = new Typecho_Widget_Helper_Form_Element_Text('socialweibo', NULL, NULL, _t('输入微博链接'), _t('在这里输入微博链接,支持 http:// 或 https:// 或 //'));
     $form->addInput($socialweibo->addRule('xssCheck', _t('请不要在链接中使用特殊字符')));
     $socialtwitter = new Typecho_Widget_Helper_Form_Element_Text('socialtwitter', NULL, NULL, _t('输入Twitter链接'), _t('在这里输入twitter链接,支持 http:// 或 https:// 或 //'));
     $form->addInput($socialtwitter->addRule('xssCheck', _t('请不要在链接中使用特殊字符')));
-		
-	//图片CDN
+        
+    //图片CDN
     $srcAddress = new Typecho_Widget_Helper_Form_Element_Text('src_add', NULL, NULL, _t('图片CDN替换前地址'), _t('即你的附件存放链接，一般为http://www.yourblog.com/usr/uploads/'));
     $form->addInput($srcAddress->addRule('xssCheck', _t('请不要在链接中使用特殊字符')));
     $cdnAddress = new Typecho_Widget_Helper_Form_Element_Text('cdn_add', NULL, NULL, _t('图片CDN替换后地址'), _t('即你的七牛云存储域名，一般为http://yourblog.qiniudn.com/，可能也支持其他有镜像功能的CDN服务'));
     $form->addInput($cdnAddress->addRule('xssCheck', _t('请不要在链接中使用特殊字符')));
     $default_thumb = new Typecho_Widget_Helper_Form_Element_Text('default_thumb', NULL, '', _t('默认缩略图'),_t('文章没有图片时的默认缩略图，留空则无，一般为http://www.yourblog.com/image.png'));
     $form->addInput($default_thumb->addRule('xssCheck', _t('请不要在链接中使用特殊字符')));
-	
-	//作者简介
-	$authordesc = new Typecho_Widget_Helper_Form_Element_Text('authordesc', null, NULL, _t('作者简介'), _t('文章页的作者说明'));
-	$form->addInput($authordesc);
+    
+    //作者简介
+    $authordesc = new Typecho_Widget_Helper_Form_Element_Text('authordesc', null, NULL, _t('作者简介'), _t('文章页的作者说明'));
+    $form->addInput($authordesc);
 
-	//代码高亮设置
-	$useHighline = new Typecho_Widget_Helper_Form_Element_Radio('useHighline',
+    //代码高亮设置
+    $useHighline = new Typecho_Widget_Helper_Form_Element_Radio('useHighline',
         array('able' => _t('启用'),
             'disable' => _t('禁止'),
         ),
         'disable', _t('代码高亮设置'), _t('默认禁止，启用则会对 ``` 进行代码高亮，支持20种编程语言的高亮'));
     $form->addInput($useHighline);
-	
-	//footer部分
-	$footad = new Typecho_Widget_Helper_Form_Element_Textarea('footad', NULL, NULL, _t('底部广告栏'), _t('页底广告位，可以放置广告，bootstrap样式'));
+    
+    //footer部分
+    $footad = new Typecho_Widget_Helper_Form_Element_Textarea('footad', NULL, NULL, _t('底部广告栏'), _t('页底广告位，可以放置广告，bootstrap样式'));
     $form->addInput($footad);
-	$flinks = new Typecho_Widget_Helper_Form_Element_Textarea('flinks', NULL, NULL, _t('底部友情链接'), _t('底部导航条 一般li格式 友情链接使用'));
+    $flinks = new Typecho_Widget_Helper_Form_Element_Textarea('flinks', NULL, NULL, _t('底部友情链接'), _t('底部导航条 一般li格式 友情链接使用'));
     $form->addInput($flinks);
-	$fcode = new Typecho_Widget_Helper_Form_Element_Textarea('fcode', NULL, NULL, _t('底部小广告'), _t('该块显示在网站底部版权上方，可已定义放一些链接或者图片之类的内容。'));
+    $fcode = new Typecho_Widget_Helper_Form_Element_Textarea('fcode', NULL, NULL, _t('底部小广告'), _t('该块显示在网站底部版权上方，可已定义放一些链接或者图片之类的内容。'));
     $form->addInput($fcode);
-	$GoogleAnalytics = new Typecho_Widget_Helper_Form_Element_Textarea('GoogleAnalytics', NULL, NULL, _t('统计代码'), _t('填写你的各种跟踪统计代码，相当于页尾代码'));
+    $miitbeian = new Typecho_Widget_Helper_Form_Element_Textarea('miitbeian', NULL, NULL, _t('备案号'), _t('填写你的备案号，留空则不显示'));
+    $form->addInput($miitbeian);
+    $GoogleAnalytics = new Typecho_Widget_Helper_Form_Element_Textarea('GoogleAnalytics', NULL, NULL, _t('统计代码'), _t('填写你的各种跟踪统计代码，相当于页尾代码'));
     $form->addInput($GoogleAnalytics);
-	
+    
 
 }
 
@@ -175,13 +177,13 @@ function showThumb($obj,$size=null,$link=false){
         }
     }
     if(empty($thumb) && empty($options->default_thumb)){
-		$thumb= $options->themeUrl .'/img/thumb/' . rand(1, 20) . '.jpg';
-		//去掉下面4行双斜杠 启用BING美图随机缩略图
-		//$str = file_get_contents('http://cn.bing.com/HPImageArchive.aspx?format=js&idx='.rand(1, 30).'&n=1');
+        $thumb= $options->themeUrl .'/img/thumb/' . rand(1, 20) . '.jpg';
+        //去掉下面4行双斜杠 启用BING美图随机缩略图
+        //$str = file_get_contents('http://cn.bing.com/HPImageArchive.aspx?format=js&idx='.rand(1, 30).'&n=1');
         //$array = json_decode($str);
-		//$imgurl = $array->{"images"}[0]->{"urlbase"};
+        //$imgurl = $array->{"images"}[0]->{"urlbase"};
         //$thumb = '//i'.rand(0, 2).'.wp.com/cn.bing.com'.$imgurl.'_1920x1080.jpg?resize=220,150';
-		
+        
         return $thumb;
     }else{
         $thumb = empty($thumb) ? $options->default_thumb : $thumb;
@@ -197,8 +199,8 @@ function hotpost() {
     if ((!empty($options->tj_cid)) && floor($options->tj_cid)==$options->tj_cid) {
         $tjids =  $options->tj_cid;
     }else{
-		$tjids = 0;
-	}
+        $tjids = 0;
+    }
     //return $tjids;
 $defaults = array(
 'cid' => $tjids,
@@ -228,20 +230,20 @@ function slout() {
     if (!empty($options->slidercode)) {
         $text = $options->slidercode;
     }else{
-		$text='<a target="_blank" href="http://www.daqianduan.com/theme/xiu"><img src="http://www.daqianduan.com/wp-content/uploads/2014/11/hs-xiu.jpg"></a>
+        $text='<a target="_blank" href="http://www.daqianduan.com/theme/xiu"><img src="http://www.daqianduan.com/wp-content/uploads/2014/11/hs-xiu.jpg"></a>
 <a target="_blank" href="http://www.daqianduan.com/theme/xiu"><img src="http://demo.themebetter.com/dux/wp-content/uploads/sites/3/2015/06/hs-xiu.jpg"></a>';
-	}
-	$t_arr = explode('
+    }
+    $t_arr = explode('
 ', $text);
-	$sss = '<div id="focusslide" class="carousel slide" data-ride="carousel"><ol class="carousel-indicators">';
-	foreach($t_arr as $key=>$val) {$sss .= '<li data-target="#focusslide" data-slide-to="'.$key.'"';
-	if($key==0){$sss .= ' class="active"></li>';}else{$sss .= '></li>';}}
-	$sss .= '</ol><div class="carousel-inner" role="listbox">';
-	foreach($t_arr as $key=>$val) {$sss .= '<div class="item';
-	if($key==0){$sss .= ' active">';}else{$sss .= '">';} $sss .= $val.'</div>';}
-	$sss .= '</div><a class="left carousel-control" href="#focusslide" role="button" data-slide="prev"><i class="fa fa-angle-left"></i></a><a class="right carousel-control" href="#focusslide" role="button" data-slide="next"><i class="fa fa-angle-right"></i></a></div>';
-	
-	echo $sss;
+    $sss = '<div id="focusslide" class="carousel slide" data-ride="carousel"><ol class="carousel-indicators">';
+    foreach($t_arr as $key=>$val) {$sss .= '<li data-target="#focusslide" data-slide-to="'.$key.'"';
+    if($key==0){$sss .= ' class="active"></li>';}else{$sss .= '></li>';}}
+    $sss .= '</ol><div class="carousel-inner" role="listbox">';
+    foreach($t_arr as $key=>$val) {$sss .= '<div class="item';
+    if($key==0){$sss .= ' active">';}else{$sss .= '">';} $sss .= $val.'</div>';}
+    $sss .= '</div><a class="left carousel-control" href="#focusslide" role="button" data-slide="prev"><i class="fa fa-angle-left"></i></a><a class="right carousel-control" href="#focusslide" role="button" data-slide="next"><i class="fa fa-angle-right"></i></a></div>';
+    
+    echo $sss;
 }
 
 //导航fa图标
@@ -250,11 +252,11 @@ function fa_ico() {
     if (!empty($options->fatext)) {
         $text = $options->fatext;
     }else{
-		$text="<i class=\"fa fa-plug\"></i>\n<i class=\"fa fa-tablet\"></i>\n<i class=\"fa fa-book\"></i>";
-	}
-	$b_arr = explode("\n", $text);
-		
-	return $b_arr;
+        $text="<i class=\"fa fa-plug\"></i>\n<i class=\"fa fa-tablet\"></i>\n<i class=\"fa fa-book\"></i>";
+    }
+    $b_arr = explode("\n", $text);
+        
+    return $b_arr;
 }
 
 //侧边栏推荐位
@@ -263,11 +265,11 @@ function sitebar_ad($obj) {
     if (!empty($options)) {
         $text = $options;
     }else{
-		$text="https://github.com/hiCasper/Typecho-theme-DUX\nDUX主题 新一代主题\nDUX for Typecho";
-	}
-	$b_arr = explode("\n", $text);
-		
-	return $b_arr;
+        $text="https://github.com/hiCasper/Typecho-theme-DUX\nDUX主题 新一代主题\nDUX for Typecho";
+    }
+    $b_arr = explode("\n", $text);
+        
+    return $b_arr;
 }
 
 
