@@ -44,7 +44,6 @@ window.jsui={
 	roll: [<?php if (!empty($this->options->sitebar_fu)) {$text = $this->options->sitebar_fu;}
 	else{$text='1,2';} $sf_arr = explode(",", $text);foreach($sf_arr as $val){echo '"'.$val.'",';} //侧边栏第几个模块浮动?>],
     ajaxpager: '0',
-    url_rp: '<?php $this->options->adminUrl('login.php'); ?>'
 };
 </script>
 <script type='text/javascript' src='//cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js '></script>
