@@ -84,7 +84,7 @@ $comments->alt(' odd', ' even');
 				<div class="comt-comterinfo" id="comment-author-info" >
 					<ul>
 						<li class="form-inline"><label class="hide" for="author">昵称</label><input class="ipt" type="text" name="author" id="author" value="" tabindex="2" placeholder="昵称（必填）" required><span class="text-muted"></span></li>
-						<li class="form-inline"><label class="hide" for="email">邮箱</label><input class="ipt" type="text" name="email" id="email" value="" tabindex="3" placeholder="邮箱（必填）" <?php if ($this->options->commentsRequireMail): ?> required<?php endif; ?>><span class="text-muted"></span></li>
+						<li class="form-inline"><label class="hide" for="mail">邮箱</label><input class="ipt" type="text" name="mail" id="mail" value="" tabindex="3" placeholder="邮箱（必填）" <?php if ($this->options->commentsRequireMail): ?> required<?php endif; ?>><span class="text-muted"></span></li>
 						<li class="form-inline"><label class="hide" for="url">网址</label><input class="ipt" type="text" name="url" id="url" value="" tabindex="4" placeholder="网址"><span class="text-muted"></span></li>
 					</ul>
 				</div>
