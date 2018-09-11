@@ -20,9 +20,10 @@
     <link rel='stylesheet' id='_main-css'  href='<?php $this->options->themeUrl('css/main.css '); ?>' type='text/css' media='all' />
 
     <style>
-<?php if (!$this->options->indexpic): ?>
+<?php if ($this->options->indexpic == 'disable'): ?>
         .excerpt {padding-left: 20px !important;}
-<?php endif; ?><?php if ($this->options->customcss): ?>
+<?php endif; ?>
+<?php if ($this->options->customcss): ?>
         <?php $this->options->customcss(); ?>
 <?php endif; ?>
 

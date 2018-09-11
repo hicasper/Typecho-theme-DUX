@@ -33,7 +33,7 @@ function themeConfig($form) {
         array('able' => _t('启用'),
             'disable' => _t('禁止'),
         ),
-        'disable', _t('首页文章缩略图'), _t('在文章首页显示缩略图'));
+        'able', _t('首页文章缩略图'), _t('在文章首页显示缩略图'));
     $form->addInput($indexpic);
     
     //幻灯片
