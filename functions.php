@@ -10,7 +10,7 @@ function themeConfig($form) {
     $logotext = new Typecho_Widget_Helper_Form_Element_Text('logotext', null, NULL, _t('站点说明'), _t('logo 旁边的两行说明 以&lt;br&gt;换行'));
     $form->addInput($logotext);
 
-    $customcss = new Typecho_Widget_Helper_Form_Element_Text('customcss', null, NULL, _t('自定义样式'), _t('已经包含style标签'));
+    $customcss = new Typecho_Widget_Helper_Form_Element_Textarea('customcss', null, NULL, _t('自定义样式'), _t('已经包含style标签'));
     $form->addInput($customcss);
 
     $DnsPrefetch = new Typecho_Widget_Helper_Form_Element_Radio('DnsPrefetch',
@@ -56,12 +56,8 @@ function themeConfig($form) {
     $form->addInput($sitebar_fu);    
 
     //社交
-    $socialweixin = new Typecho_Widget_Helper_Form_Element_Text('socialweixin', NULL, NULL, _t('输入微信二维码链接'), _t('在这里输入微信二维码链接,图片格式,支持 http:// 或 https:// 或 //'));
-    $form->addInput($socialweixin->addRule('xssCheck', _t('请不要在图片链接中使用特殊字符')));
-    $socialweibo = new Typecho_Widget_Helper_Form_Element_Text('socialweibo', NULL, NULL, _t('输入微博链接'), _t('在这里输入微博链接,支持 http:// 或 https:// 或 //'));
-    $form->addInput($socialweibo->addRule('xssCheck', _t('请不要在链接中使用特殊字符')));
-    $socialtwitter = new Typecho_Widget_Helper_Form_Element_Text('socialtwitter', NULL, NULL, _t('输入Twitter链接'), _t('在这里输入twitter链接,支持 http:// 或 https:// 或 //'));
-    $form->addInput($socialtwitter->addRule('xssCheck', _t('请不要在链接中使用特殊字符')));
+    $friendlinks = new Typecho_Widget_Helper_Form_Element_Textarea('friendlinks', NULL, NULL, _t('单页友情链接'), _t('请参考http://blog.hicasper.com/post/64.html'));
+    $form->addInput($friendlinks);    
         
     //图片CDN
     $srcAddress = new Typecho_Widget_Helper_Form_Element_Text('src_add', NULL, NULL, _t('图片CDN替换前地址'), _t('即你的附件存放链接，一般为http://www.yourblog.com/usr/uploads/'));
@@ -90,7 +86,7 @@ function themeConfig($form) {
     $form->addInput($flinks);
     $fcode = new Typecho_Widget_Helper_Form_Element_Textarea('fcode', NULL, NULL, _t('底部小广告'), _t('该块显示在网站底部版权上方，可已定义放一些链接或者图片之类的内容。'));
     $form->addInput($fcode);
-    $miitbeian = new Typecho_Widget_Helper_Form_Element_Textarea('miitbeian', NULL, NULL, _t('备案号'), _t('填写你的备案号，留空则不显示'));
+    $miitbeian = new Typecho_Widget_Helper_Form_Element_Text('miitbeian', NULL, NULL, _t('备案号'), _t('填写你的备案号，留空则不显示'));
     $form->addInput($miitbeian);
     $GoogleAnalytics = new Typecho_Widget_Helper_Form_Element_Textarea('GoogleAnalytics', NULL, NULL, _t('统计代码'), _t('填写你的各种跟踪统计代码，相当于页尾代码'));
     $form->addInput($GoogleAnalytics);
