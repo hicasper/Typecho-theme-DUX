@@ -6,7 +6,8 @@
         <ul class="widget-nav"><li class="active">最新文章</li></ul>
         <ul class="widget-navcontent">
             <li class="item item-01 active">
-                <ul><?php $this->widget('Widget_Contents_Post_Recent','pageSize=6')->to($post); ?>
+                <ul>
+<?php $this->widget('Widget_Contents_Post_Recent','pageSize=6')->to($post); ?>
 <?php while($post->next()): ?>
                     <li><time><?php $post->date('m-d'); ?></time><a href="<?php $post->permalink(); ?>" title="<?php $post->title(); ?>"><?php $post->title(); ?></a></li>
 <?php endwhile; ?>

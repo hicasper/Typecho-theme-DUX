@@ -17,8 +17,16 @@
 
     <link rel='stylesheet' id='_bootstrap-css'  href='//cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css ' type='text/css' media='all' />
     <link rel='stylesheet' id='_fontawesome-css'  href='//cdn.bootcss.com/font-awesome/4.2.0/css/font-awesome.min.css ' type='text/css' media='all' />
-    <link rel='stylesheet' id='_main-css'  href='<?php $this->options->themeUrl('css/main.css '); ?>' type='text/css' media='all' /><?php if ($this->options->customcss): ?>
-    <style><?php $this->options->customcss(); ?></style><?php endif; ?>
+    <link rel='stylesheet' id='_main-css'  href='<?php $this->options->themeUrl('css/main.css '); ?>' type='text/css' media='all' />
+
+    <style>
+<?php if (!$this->options->indexpic): ?>
+        .excerpt {padding-left: 20px !important;}
+<?php endif; ?><?php if ($this->options->customcss): ?>
+        <?php $this->options->customcss(); ?>
+<?php endif; ?>
+
+    </style>
 
     <script type='text/javascript' src='//cdn.bootcss.com/jquery/1.9.1/jquery.min.js '></script>
     <!--加载进度条-->

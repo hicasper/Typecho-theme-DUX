@@ -29,6 +29,13 @@ function themeConfig($form) {
     $smallbanner = new Typecho_Widget_Helper_Form_Element_Textarea('smallbanner', NULL, NULL, _t('首页中部小菜单'), _t('填写导航条代码 A链接格式即可'));
     $form->addInput($smallbanner);
     
+    $indexpic = new Typecho_Widget_Helper_Form_Element_Radio('indexpic',
+        array('able' => _t('启用'),
+            'disable' => _t('禁止'),
+        ),
+        'disable', _t('首页文章缩略图'), _t('在文章首页显示缩略图'));
+    $form->addInput($indexpic);
+    
     //幻灯片
     $Slider = new Typecho_Widget_Helper_Form_Element_Radio('Slider',
         array('SliderTrue'=>_t('开启'),'SliderFalse'=>_t('关闭')),
