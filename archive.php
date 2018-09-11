@@ -14,7 +14,9 @@
 <?php if($this->have()):?>
 <?php while($this->next()): ?>
                 <article class="excerpt">
+<?php if ($this->options->indexpic == 'able'): ?>
                     <a class="focus" href="<?php $this->permalink() ?>"><img src="<?php $this->options->themeUrl('img/thumbnail.png'); ?>" data-src="<?php echo showThumb($this,null,true); ?>" class="thumb"></a>
+<?php endif; ?>
                     <header>
                         <a class="cat"><?php $this->category(',',false); ?><i></i></a>
                         <h2><a href="<?php $this->permalink() ?>" title="<?php $this->title() ?>-<?php $this->options->title();?>"><?php $this->title() ?></a></h2>
