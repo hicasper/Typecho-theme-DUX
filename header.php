@@ -10,7 +10,7 @@
     <title><?php $this->archiveTitle(array('category'=>_t(' %s '),'search'=>_t(' %s '),'tag'=>_t(' %s '),'author'=>_t(' %s ')),'',' - ');?> <?php $this->options->title();?></title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
-    <link rel="shortcut icon" href="<?php $this->options->themeUrl('favicon.ico'); ?>">
+    <link rel="shortcut icon" href="<?php if (!empty($this->options->icoUrl)): ?><?php $this->options->icoUrl(); ?><?php else: ?><?php $this->options->themeUrl('img/favicon.ico'); ?><?php endif; ?>">
     <meta name="apple-mobile-web-app-title" content="<?php $this->options->title();?>">
     <meta http-equiv="Cache-Control" content="no-siteapp">
     <meta http-equiv="Cache-Control" content="no-transform">

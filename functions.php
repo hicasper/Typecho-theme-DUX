@@ -6,6 +6,9 @@ function themeConfig($form) {
     //header部分
     $logoUrl = new Typecho_Widget_Helper_Form_Element_Text('logoUrl', NULL, NULL, _t('站点LOGO地址'), _t('在这里填入一个图片URL地址, 以在网站标题前加上一个LOGO'));
     $form->addInput($logoUrl->addRule('xssCheck', _t('请不要在图片链接中使用特殊字符')));
+    
+    $icoUrl = new Typecho_Widget_Helper_Form_Element_Text('icoUrl', NULL, NULL, _t('站点favicon地址'), _t('在这里填入favicon.ico的地址，留空为默认'));
+    $form->addInput($icoUrl->addRule('xssCheck', _t('请不要在图片链接中使用特殊字符')));
 
     $logotext = new Typecho_Widget_Helper_Form_Element_Text('logotext', null, NULL, _t('站点说明'), _t('logo 旁边的两行说明 以&lt;br&gt;换行'));
     $form->addInput($logotext);

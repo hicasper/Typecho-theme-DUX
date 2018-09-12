@@ -1,5 +1,5 @@
 body {
-	font-family: 'Microsoft Yahei';
+	font-family: 'Microsoft YaHei', '微软雅黑', Arial, sans-serif;
 	color: #555;
 }
 
@@ -3292,41 +3292,41 @@ body {
 }
 
 .friends {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 5em;
-    padding: 0.5em;
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: 5em;
+	padding: 0.5em;
 }
 .friends .a-friend {
-    display: flex;
-    margin: 10px 10px 0 0;
-    text-decoration: none;
-    font-weight: 300;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-    padding: 10px;
-    transition: box-shadow 0.2s, transform 0.2s;
+	display: flex;
+	margin: 10px 10px 0 0;
+	text-decoration: none;
+	font-weight: 300;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+	padding: 10px;
+	transition: box-shadow 0.2s, transform 0.2s;
 }
 .friends .a-friend:hover {
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 .friends .a-friend:active {
-    transform: scale(0.95);
+	transform: scale(0.95);
 }
 .friends .a-friend .blog-avatar {
-    background-color: white;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
+	background-color: white;
+	border-radius: 50%;
+	width: 50px;
+	height: 50px;
 }
 .friends .a-friend .text-container {
-    margin-left: 10px;
+	margin-left: 10px;
 }
 .friends .a-friend .text-container .name {
-    font-size: 14px;
+	font-size: 14px;
 }
 .friends .a-friend .text-container .description {
-    font-size: 12px;
-    margin-top: 5px;
+	font-size: 12px;
+	margin-top: 5px;
 }
 
 .prettyprint,
@@ -3777,7 +3777,7 @@ pre.prettyprint.linenums ol li {
 	.m-nav-show .m-navbar {
 		left: 0;
 	}
-    /*.m-nav-show .header{position: absolute;}*/
+	/*.m-nav-show .header{position: absolute;}*/
 	.m-nav-show .m-mask {
 		display: block;
 		position: fixed;
@@ -3980,6 +3980,7 @@ pre.prettyprint.linenums ol li {
 	.excerpt h2, .excerpt-minic h2 {
 		font-size: 16px;
 		line-height: 18px;
+		padding-top: 10px;
 	}
 
 	.excerpt-minic {
