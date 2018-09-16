@@ -42,7 +42,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
     window.jsui={
         www: '<?php $this->options ->siteUrl(); ?>',
         uri: '<?php echo rtrim($this->options ->themeUrl,"/");?>',
-        ver: '0.1',
+        ver: '1.0',
         roll: [<?php if (!empty($this->options->sitebar_fu)) {$text = $this->options->sitebar_fu;}
         else{$text='1,2';} $sf_arr = explode(",", $text);foreach($sf_arr as $val){echo '"'.$val.'",';} //侧边栏第几个模块浮动 ?>],
         ajaxpager: '0'

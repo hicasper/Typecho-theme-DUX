@@ -1,10 +1,10 @@
 <?php
 /**
- * 扒皮自大前端的WorePress主题。
+ * 大前端主题修改版 for Typecho
  *
  * @package DUX主题
- * @author 大前端
- * @version 0.1
+ * @author 大前端 (由 hiCasper 修改)
+ * @version 1.0
  * @link https://github.com/hiCasper/Typecho-theme-DUX
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
