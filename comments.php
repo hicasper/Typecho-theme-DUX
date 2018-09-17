@@ -28,14 +28,14 @@ function threadedComments($comments, $options) {
     }
     $comments->alt(' odd', ' even');
     ?>">
-        <?php
-            $host = '//cn.gravatar.com';
-            $url = '/avatar/';
-            $size = '50';
-            $rating = Helper::options()->commentsAvatarRating;
-            $hash = md5(strtolower($comments->mail));
-            $avatar = $host . $url . $hash . '?s=' . $size . '&r=' . $rating . '&d=';
-        ?>
+<?php
+    $host = '//cn.gravatar.com';
+    $url = '/avatar/';
+    $size = '50';
+    $rating = Helper::options()->commentsAvatarRating;
+    $hash = md5(strtolower($comments->mail));
+    $avatar = $host . $url . $hash . '?s=' . $size . '&r=' . $rating . '&d=mm';
+?>
         <div class="comt-avatar"><img alt="" data-src="<?php echo $avatar ?>" srcset="<?php echo $avatar ?> 2x" class="avatar photo" height="50" width="50" src="<?php $aoptions = Typecho_Widget::widget('Widget_Options'); $aoptions ->themeUrl("img/avatar-default.png"); ?>"></div>
         <div class="comt-main" id="div-<?php $comments->theId(); ?>">
             <p><?php $comments->content(); ?></p>

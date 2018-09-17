@@ -38,30 +38,6 @@ if( $('.widget-nav').length ){
     })
 }
 
-if( $('.sns-wechat').length ){
-    $('.sns-wechat').on('click', function(){
-        var _this = $(this)
-        if( !$('#modal-wechat').length ){
-            $('body').append('\
-                <div class="modal fade" id="modal-wechat" tabindex="-1" role="dialog" aria-hidden="true">\
-                    <div class="modal-dialog" style="margin-top:200px;width:340px;">\
-                        <div class="modal-content">\
-                            <div class="modal-header">\
-                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>\
-                                <h4 class="modal-title">'+ _this.attr('title') +'</h4>\
-                            </div>\
-                            <div class="modal-body" style="text-align:center">\
-                                <img style="max-width:100%" src="'+ _this.data('src') +'">\
-                            </div>\
-                        </div>\
-                    </div>\
-                </div>\
-            ')
-        }
-        $('#modal-wechat').modal()
-    })
-}
-
 
 if( $('.carousel').length ){
     var el_carousel = $('.carousel')
@@ -569,5 +545,3 @@ function strToDate(str, fmt) { //author: meizz
             fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
     return fmt;
 }
-
-
