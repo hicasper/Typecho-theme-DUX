@@ -69,7 +69,7 @@ function themeConfig($form) {
     $friendlinks = new Typecho_Widget_Helper_Form_Element_Textarea('friendlinks', NULL, NULL, _t('单页友情链接'), _t('请参考http://blog.hicasper.com/post/64.html'));
     $form->addInput($friendlinks);    
         
-    //图片CDN
+    //图片
     $srcAddress = new Typecho_Widget_Helper_Form_Element_Text('src_add', NULL, NULL, _t('图片CDN替换前地址'), _t('即你的附件存放链接，一般为http://www.yourblog.com/usr/uploads/'));
     $form->addInput($srcAddress->addRule('xssCheck', _t('请不要在链接中使用特殊字符')));
     $cdnAddress = new Typecho_Widget_Helper_Form_Element_Text('cdn_add', NULL, NULL, _t('图片CDN替换后地址'), _t('即你的七牛云存储域名，一般为http://yourblog.qiniudn.com/，可能也支持其他有镜像功能的CDN服务'));
@@ -186,7 +186,7 @@ function showThumb($obj,$size=null,$link=false){
         }
     }
     if(empty($thumb) && empty($options->default_thumb)){
-        $thumb= $options->themeUrl .'/img/thumb/' . rand(1, 20) . '.jpg';
+        $thumb= $options->themeUrl .'/img/thumb/' . rand(1, 15) . '.jpg';
         //去掉下面4行双斜杠 启用BING美图随机缩略图
         //$str = file_get_contents('http://cn.bing.com/HPImageArchive.aspx?format=js&idx='.rand(1, 30).'&n=1');
         //$array = json_decode($str);
