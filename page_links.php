@@ -14,9 +14,6 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
             </header>
             <article class="article-content">
                 <?php parseContent($this); ?>
-                <div class="friends">
-                    <?php $this->options->friendlinks(); ?>
-                </div>
             </article>
 <?php $this->need('comments.php'); ?>
         </div>

@@ -77,8 +77,6 @@ function themeConfig($form) {
     $form->addInput($sitebar_fu);
 
     //社交
-    $friendlinks = new Typecho_Widget_Helper_Form_Element_Textarea('friendlinks', NULL, NULL, _t('单页友情链接'), _t('请参考http://blog.hicasper.com/post/64.html'));
-    $form->addInput($friendlinks);
 
     //图片
     $srcAddress = new Typecho_Widget_Helper_Form_Element_Text('src_add', NULL, NULL, _t('图片CDN替换前地址'), _t('即你的附件存放链接，一般为http://www.yourblog.com/usr/uploads/'));
