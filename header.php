@@ -2,11 +2,15 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <meta charset="<?php $this->options->charset(); ?>"><?php if ($this->options->DnsPrefetch): ?>
-    <meta http-equiv="x-dns-prefetch-control" content="on"><?php if ($this->options->cdn_add): ?>
-    <link rel="dns-prefetch" href="<?php $this->options->cdn_add(); ?>" /><?php endif; ?>
+    <meta charset="<?php $this->options->charset(); ?>">
+<?php if ($this->options->DnsPrefetch): ?>
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+<?php if ($this->options->cdn_add): ?>
+    <link rel="dns-prefetch" href="<?php $this->options->cdn_add(); ?>" />
+<?php endif; ?>
     <link rel="dns-prefetch" href="//cdn.bootcss.com" />
-    <link rel="dns-prefetch" href="//cn.gravatar.com" /><?php endif; ?>
+    <link rel="dns-prefetch" href="//cn.gravatar.com" />
+<?php endif; ?>
     <title><?php $this->archiveTitle(array('category'=>_t(' %s '),'search'=>_t(' %s '),'tag'=>_t(' %s '),'author'=>_t(' %s ')),'',' - ');?> <?php $this->options->title();?></title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
@@ -22,11 +26,9 @@
     <style>
 <?php if ($this->options->indexpic == 'disable'): ?>
         .excerpt {padding-left: 20px !important;}
-<?php endif; ?>
-<?php if ($this->options->customcss): ?>
+<?php endif; ?><?php if ($this->options->customcss): ?>
         <?php $this->options->customcss(); ?>
 <?php endif; ?>
-
     </style>
 
     <script type='text/javascript' src='//cdn.bootcss.com/jquery/1.9.1/jquery.min.js '></script>
@@ -35,7 +37,8 @@
     <script> paceOptions = { elements: {selectors: ['#footer']}};</script>
     <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
     <!--[if lt IE 9]><script src="//cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script><![endif]-->
-    <?php $this->header('keywords=&generator=&template=&pingback=&xmlrpc=&wlw=&commentReply=&rss1=&rss2=&atom='); ?>
+
+    <?php $this->header('generator=&template=&pingback=&xmlrpc=&wlw=&commentReply=&rss1=&rss2=&atom='); ?>
 </head>
 
 <body class="<?php if ($this->is('index')) : ?>home<?php elseif ($this->is('post')) : ?>single<?php elseif ($this->is('page')) : ?>page<?php elseif ($this->is('archive')) : ?>archive<?php else: ?><?php endif; ?>">
@@ -50,11 +53,11 @@
             </h1>
             <div class="brand"><?php if($this->options->logotext && !empty($this->options->logotext) ): ?><?php $this->options->logotext(); ?><?php endif; ?></div>
             <ul class="site-nav site-navbar">
-                <li>
-                <a href="<?php $this->options ->siteUrl(); ?>">
-                    <i class="fa fa-home"></i>首页</a>
-                </li><?php $this->widget('Widget_Metas_Category_List')->to($cats); $i=0;  $b_arr = fa_ico(); ?><?php while ($cats->next()): ?>
-                <li><a href="<?php $cats->permalink()?>"><?php echo $b_arr[$i]; ?> <?php $cats->name()?></a></li><?php $i++; ?><?php endwhile; ?>
+                <li><a href="<?php $this->options ->siteUrl(); ?>"><i class="fa fa-home"></i>首页</a></li>
+<?php $this->widget('Widget_Metas_Category_List')->to($cats); $i=0; while($cats->next()): ?>
+                <li><a href="<?php $cats->permalink()?>"><?php echo fa_ico(1,$i); ?> <?php $cats->name()?></a></li>
+<?php $i++; endwhile; ?>
+<?php if ($this->options->pagemenu == 'able'): ?>
                 <li>
                     <a><i class="fa fa-file-text-o"></i>页面</a>
                     <ul class="sub-menu">
@@ -63,6 +66,11 @@
 <?php endwhile; ?>
                     </ul>
                 </li>
+<?php else: ?>
+<?php $this->widget('Widget_Contents_Page_List')->to($pages); $i=0; while($pages->next()): ?>
+                <li><a href="<?php $pages->permalink(); ?>"><?php echo fa_ico(2,$i); ?><?php $pages->title(); ?></a></li>
+<?php $i++; endwhile; ?>
+<?php endif; ?>
                 <li class="navto-search">
                     <a href="javascript:;" class="search-show active"><i class="fa fa-search"></i></a>
                 </li>

@@ -23,8 +23,18 @@ function themeConfig($form) {
         'disable', _t('DNS预解析加速'), _t('默认禁止，启用则会对CDN资源和Gravatar进行加速'));
     $form->addInput($DnsPrefetch);
 
-    $fatext = new Typecho_Widget_Helper_Form_Element_Textarea('fatext', NULL, NULL, _t('顶部导航栏fa图标'), _t('顶部导航栏fa图标，&lt;i class="fa fa-plug"&gt;&lt;/i&gt; 格式一行一个<br>和导航条菜单项按顺序匹配,用法参见<a href="http://www.yeahzan.com/fa/facss.html" target="_blank">FA图标CSS分类参考</a>'));
+    $fatext = new Typecho_Widget_Helper_Form_Element_Textarea('fatext', NULL, NULL, _t('顶部导航栏分类fa图标'), _t('顶部导航栏分类fa图标，&lt;i class="fa fa-plug"&gt;&lt;/i&gt; 格式一行一个<br>和导航条分类菜单项按顺序匹配,用法参见<a href="http://www.yeahzan.com/fa/facss.html" target="_blank">FA图标CSS分类参考</a>'));
     $form->addInput($fatext);
+
+    $pagemenu = new Typecho_Widget_Helper_Form_Element_Radio('pagemenu',
+        array('able' => _t('启用'),
+            'disable' => _t('禁止'),
+        ),
+        'able', _t('首页独立页面菜单'), _t('在导航条显示独立页面菜单'));
+    $form->addInput($pagemenu);
+
+    $pagefatext = new Typecho_Widget_Helper_Form_Element_Textarea('pagefatext', NULL, NULL, _t('顶部导航栏独立页面fa图标'), _t('顶部导航栏独立页面fa图标，&lt;i class="fa fa-plug"&gt;&lt;/i&gt; 格式一行一个<br>和导航条独立页面项按顺序匹配,用法参见<a href="http://www.yeahzan.com/fa/facss.html" target="_blank">FA图标CSS分类参考</a>'));
+    $form->addInput($pagefatext);
 
     $tuijian = new Typecho_Widget_Helper_Form_Element_Text('tj_cid', NULL, NULL, _t('置顶展示'), _t('请输入要置顶展示文章的cid'));
     $form->addInput($tuijian);
@@ -257,16 +267,30 @@ function slout() {
 }
 
 //导航fa图标
-function fa_ico() {
+function fa_ico($type, $num) {
     $options = Typecho_Widget::widget('Widget_Options');
-    if (!empty($options->fatext)) {
-        $text = $options->fatext;
-    }else{
-        $text="<i class=\"fa fa-plug\"></i>\n<i class=\"fa fa-tablet\"></i>\n<i class=\"fa fa-book\"></i>";
+    if ($type == 1) {
+        if (!empty($options->fatext)) {
+            $text = $options->fatext;
+            $fa_arr = explode("\n", $text);
+            return $fa_arr[$num];
+        }
+        else {
+            $text='<i class="fa fa-book"></i>';
+            return $text;
+        }
     }
-    $b_arr = explode("\n", $text);
-
-    return $b_arr;
+    else {
+        if (!empty($options->pagefatext)) {
+            $text = $options->pagefatext;
+            $fa_arr = explode("\n", $text);
+            return $fa_arr[$num];
+        }
+        else {
+            $text='<i class="fa fa-file-text-o"></i>';
+            return $text;
+        }
+    }
 }
 
 //侧边栏推荐位
