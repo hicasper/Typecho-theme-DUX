@@ -12,5 +12,6 @@
 # 预览地址
 http://blog.hicasper.com
 
+![Typecho-theme-DUX.png](https://i.loli.net/2018/09/22/5ba5d0e56f3c9.png)
 
 >本主题仅基于爱好修改，使用时请尊重原作者大前端版权。
