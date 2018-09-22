@@ -23,7 +23,7 @@ function themeConfig($form) {
         'disable', _t('DNS预解析加速'), _t('默认禁止，启用则会对CDN资源和Gravatar进行加速'));
     $form->addInput($DnsPrefetch);
 
-    $fatext = new Typecho_Widget_Helper_Form_Element_Textarea('fatext', NULL, NULL, _t('顶部导航栏分类fa图标'), _t('顶部导航栏分类fa图标，&lt;i class="fa fa-plug"&gt;&lt;/i&gt; 格式一行一个<br>和导航条分类菜单项按顺序匹配,用法参见<a href="http://www.yeahzan.com/fa/facss.html" target="_blank">FA图标CSS分类参考</a>'));
+    $fatext = new Typecho_Widget_Helper_Form_Element_Textarea('fatext', NULL, NULL, _t('顶部导航栏分类fa图标'), _t('顶部导航栏分类fa图标，&lt;i class="fa fa-plug"&gt;&lt;/i&gt; 格式一行一个<br>和导航条分类菜单项按顺序匹配,用法参见<a href="http://www.fontawesome.com.cn/faicons/" target="_blank">FA图标CSS分类参考</a>'));
     $form->addInput($fatext);
 
     $pagemenu = new Typecho_Widget_Helper_Form_Element_Radio('pagemenu',
@@ -33,7 +33,7 @@ function themeConfig($form) {
         'able', _t('首页独立页面菜单'), _t('在导航条显示独立页面菜单'));
     $form->addInput($pagemenu);
 
-    $pagefatext = new Typecho_Widget_Helper_Form_Element_Textarea('pagefatext', NULL, NULL, _t('顶部导航栏独立页面fa图标'), _t('顶部导航栏独立页面fa图标，&lt;i class="fa fa-plug"&gt;&lt;/i&gt; 格式一行一个<br>和导航条独立页面项按顺序匹配,用法参见<a href="http://www.yeahzan.com/fa/facss.html" target="_blank">FA图标CSS分类参考</a>'));
+    $pagefatext = new Typecho_Widget_Helper_Form_Element_Textarea('pagefatext', NULL, NULL, _t('顶部导航栏独立页面fa图标'), _t('顶部导航栏独立页面fa图标，&lt;i class="fa fa-plug"&gt;&lt;/i&gt; 格式一行一个<br>和导航条独立页面项按顺序匹配,用法参见<a href="http://www.fontawesome.com.cn/faicons/" target="_blank">FA图标CSS分类参考</a>'));
     $form->addInput($pagefatext);
 
     $tuijian = new Typecho_Widget_Helper_Form_Element_Text('tj_cid', NULL, NULL, _t('置顶展示'), _t('请输入要置顶展示文章的cid'));
