@@ -8,20 +8,20 @@
 <?php if ($this->options->cdn_add): ?>
     <link rel="dns-prefetch" href="<?php $this->options->cdn_add(); ?>" />
 <?php endif; ?>
-    <link rel="dns-prefetch" href="//cdn.bootcss.com" />
+    <link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
     <link rel="dns-prefetch" href="//cn.gravatar.com" />
 <?php endif; ?>
     <title><?php $this->archiveTitle(array('category'=>_t(' %s '),'search'=>_t(' %s '),'tag'=>_t(' %s '),'author'=>_t(' %s ')),'',' - ');?> <?php $this->options->title();?></title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
-    <link rel="shortcut icon" href="<?php if (!empty($this->options->icoUrl)): ?><?php $this->options->icoUrl(); ?><?php else: ?><?php $this->options->themeUrl('img/favicon.ico'); ?><?php endif; ?>">
+    <link rel="shortcut icon" href="<?php if ($this->options->icoUrl): ?><?php $this->options->icoUrl(); ?><?php else: ?><?php $this->options->themeUrl('img/favicon.ico'); ?><?php endif; ?>">
     <meta name="apple-mobile-web-app-title" content="<?php $this->options->title();?>">
     <meta http-equiv="Cache-Control" content="no-siteapp">
     <meta http-equiv="Cache-Control" content="no-transform">
 
-    <link rel='stylesheet' id='_bootstrap-css'  href='//cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css ' type='text/css' media='all' />
-    <link rel='stylesheet' id='_fontawesome-css'  href='//cdn.bootcss.com/font-awesome/4.2.0/css/font-awesome.min.css ' type='text/css' media='all' />
-    <link rel='stylesheet' id='_main-css'  href='<?php $this->options->themeUrl('css/main.css '); ?>' type='text/css' media='all' />
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/bootstrap/3.2.0/css/bootstrap.min.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="<?php $this->options->themeUrl('css/main.css '); ?>" type="text/css" media="all" />
 
     <style>
 <?php if ($this->options->indexpic == 'disable'): ?>
@@ -31,12 +31,12 @@
 <?php endif; ?>
     </style>
 
-    <script type='text/javascript' src='//cdn.bootcss.com/jquery/1.9.1/jquery.min.js '></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/1.9.1/jquery.min.js"></script>
     <!--加载进度条-->
-    <link href="//cdn.bootcss.com/pace/1.0.2/themes/orange/pace-theme-flash.css" rel="stylesheet" />
+    <link href="//cdn.jsdelivr.net/pace/1.0.2/themes/orange/pace-theme-flash.css" rel="stylesheet" />
     <script> paceOptions = { elements: {selectors: ['#footer']}};</script>
-    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
-    <!--[if lt IE 9]><script src="//cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script><![endif]-->
+    <script src="//cdn.jsdelivr.net/pace/1.0.2/pace.min.js"></script>
+    <!--[if lt IE 9]><script src="//cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script><![endif]-->
 
     <?php $this->header('generator=&template=&pingback=&xmlrpc=&wlw=&commentReply=&rss1=&rss2=&atom='); ?>
 </head>
@@ -68,7 +68,7 @@
                 </li>
 <?php else: ?>
 <?php $this->widget('Widget_Contents_Page_List')->to($pages); $i=0; while($pages->next()): ?>
-                <li><a href="<?php $pages->permalink(); ?>"><?php echo fa_ico(2,$i); ?><?php $pages->title(); ?></a></li>
+                <li><a href="<?php $pages->permalink(); ?>"><?php echo fa_ico(2,$i); ?> <?php $pages->title(); ?></a></li>
 <?php $i++; endwhile; ?>
 <?php endif; ?>
                 <li class="navto-search">

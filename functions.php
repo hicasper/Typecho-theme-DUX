@@ -110,7 +110,6 @@ function themeConfig($form) {
     $GoogleAnalytics = new Typecho_Widget_Helper_Form_Element_Textarea('GoogleAnalytics', NULL, NULL, _t('统计代码'), _t('填写你的各种跟踪统计代码，相当于页尾代码'));
     $form->addInput($GoogleAnalytics);
 
-
 }
 
 

@@ -36,19 +36,18 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
         </div>
     </footer>
 <?php if ($this->options->useHighline == 'able'): ?>
-    <script src="//cdn.bootcss.com/highlight.js/9.9.0/highlight.min.js"></script>
+    <script src="//cdn.jsdelivr.net/highlight.js/9.11.0/highlight.min.js"></script>
 <?php endif; ?>
     <script>
     window.jsui={
         www: '<?php $this->options ->siteUrl(); ?>',
         uri: '<?php echo rtrim($this->options ->themeUrl,"/");?>',
         ver: '1.0',
-        roll: [<?php if (!empty($this->options->sitebar_fu)) {$text = $this->options->sitebar_fu;}
-        else{$text='1,2';} $sf_arr = explode(",", $text);foreach($sf_arr as $val){echo '"'.$val.'",';} //侧边栏第几个模块浮动 ?>],
+        roll: [<?php if (!empty($this->options->sitebar_fu)) {$text = $this->options->sitebar_fu;} else{$text='1';} $sf_arr = explode(",", $text);foreach($sf_arr as $val){echo '"'.$val.'",';} //侧边栏第几个模块浮动 ?>],
         ajaxpager: '0'
     };
     </script>
-    <script type='text/javascript' src='//cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js '></script>
+    <script type='text/javascript' src='//cdn.jsdelivr.net/bootstrap/3.2.0/js/bootstrap.min.js'></script>
     <script type='text/javascript' src='<?php $this->options->themeUrl('js/loader.js '); ?>'></script>
     <!-- Analytics code -->
 <?php if($this->options->GoogleAnalytics): ?>
