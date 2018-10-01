@@ -65,16 +65,26 @@ function themeConfig($form) {
 
     //侧边栏
     $sidebarBlock = new Typecho_Widget_Helper_Form_Element_Checkbox('sidebarBlock',
-    array('ShowRecentPosts' => _t('最新文章'),
-    'ShowCategory' => _t('推荐链接，广告位'),
-    'ShowRecentComments' => _t('最新评论'),
-    'ShowTags' => _t('标签云')),
-    array('ShowRecentPosts', 'ShowCategory', 'ShowRecentComments', 'ShowTags'), _t('侧边栏显示'));
+        array('ShowRecentPosts' => _t('最新文章'),
+            'ShowCategory' => _t('推荐链接，广告位'),
+            'ShowRecentComments' => _t('最新评论'),
+            'ShowTags' => _t('标签云')),
+            array('ShowRecentPosts', 'ShowCategory', 'ShowRecentComments', 'ShowTags'), _t('侧边栏显示')
+        );
     $form->addInput($sidebarBlock->multiMode());
+
     $sidebarAD = new Typecho_Widget_Helper_Form_Element_Textarea('sidebarAD', NULL, NULL, _t('侧边栏推荐位红色'), _t('请按固定格式填写，否则会造成错乱，可添加多个，第一行是广告的链接地址，第二行是广告标题，第三行是广告内容<br>例如:<br>http://themebetter.com/theme/dux<br>DUX主题 新一代主题<br>DUX Wordpress主题是大前端当前使用主题，是大前端积累多年Wordpress主题经验设计而成；更加扁平的风格和干净白色的架构会让网站显得内涵而出色...'));
     $form->addInput($sidebarAD);
+
     $sitebar_fu = new Typecho_Widget_Helper_Form_Element_Text('sitebar_fu', NULL, NULL, _t('侧边栏浮动'), _t('请输入要浮动的侧边栏模块序号并使用英文逗号分隔，例如1,3 代表第1和第3块侧边栏会浮动'));
     $form->addInput($sitebar_fu);
+
+    $pagesidebar = new Typecho_Widget_Helper_Form_Element_Radio('pagesidebar',
+        array('able' => _t('启用'),
+            'disable' => _t('禁止'),
+        ),
+        'able', _t('独立页面左边导航栏'), _t('在独立页面左边显示导航栏'));
+    $form->addInput($pagesidebar);
 
     //社交
 

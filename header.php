@@ -3,7 +3,7 @@
 <html>
 <head>
     <meta charset="<?php $this->options->charset(); ?>">
-<?php if ($this->options->DnsPrefetch): ?>
+<?php if ($this->options->DnsPrefetch == "able"): ?>
     <meta http-equiv="x-dns-prefetch-control" content="on">
 <?php if ($this->options->cdn_add): ?>
     <link rel="dns-prefetch" href="<?php $this->options->cdn_add(); ?>" />
