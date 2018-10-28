@@ -59,7 +59,7 @@
 <?php $i++; endwhile; ?>
 <?php if ($this->options->pagemenu == 'able'): ?>
                 <li>
-                    <a><i class="fa fa-file-text-o"></i>页面</a>
+                    <a><i class="fa fa-file-text-o"></i>独立页面</a>
                     <ul class="sub-menu">
 <?php $this->widget('Widget_Contents_Page_List')->to($pages); while($pages->next()): ?>
                         <li <?php if($this->is('page', $pages->slug)): ?> class="current-menu-item"<?php endif; ?>><a href="<?php $pages->permalink(); ?>"><?php $pages->title(); ?></a></li>

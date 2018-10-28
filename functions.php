@@ -27,10 +27,10 @@ function themeConfig($form) {
     $form->addInput($fatext);
 
     $pagemenu = new Typecho_Widget_Helper_Form_Element_Radio('pagemenu',
-        array('able' => _t('启用'),
-            'disable' => _t('禁止'),
+        array('able' => _t('折叠'),
+            'disable' => _t('展开'),
         ),
-        'able', _t('首页独立页面菜单'), _t('在导航条显示独立页面菜单'));
+        'able', _t('折叠首页独立页面菜单'), _t(''));
     $form->addInput($pagemenu);
 
     $pagefatext = new Typecho_Widget_Helper_Form_Element_Textarea('pagefatext', NULL, NULL, _t('顶部导航栏独立页面fa图标'), _t('顶部导航栏独立页面fa图标，&lt;i class="fa fa-plug"&gt;&lt;/i&gt; 格式一行一个<br>和导航条独立页面项按顺序匹配,用法参见<a href="http://www.fontawesome.com.cn/faicons/" target="_blank">FA图标CSS分类参考</a>'));
@@ -47,7 +47,7 @@ function themeConfig($form) {
         array('able' => _t('启用'),
             'disable' => _t('禁止'),
         ),
-        'able', _t('首页文章缩略图'), _t('在文章首页显示缩略图'));
+        'able', _t('首页文章显示缩略图'), _t(''));
     $form->addInput($indexpic);
 
     //幻灯片
@@ -59,8 +59,15 @@ function themeConfig($form) {
         );
     $form->addInput($Slider);
 
-    $slidercode = new Typecho_Widget_Helper_Form_Element_Textarea('slidercode', NULL, NULL, _t('幻灯片代码'), _t('请按此格式填写，展示几个就填几行&lt;a href="你的链接"&gt; &lt;img src="图片链接" width="100%" /&gt;&lt;/a&gt;'));
+    $slidercode = new Typecho_Widget_Helper_Form_Element_Textarea('slidercode', NULL, NULL, _t('幻灯片代码'), _t('请按以下格式填写，展示几个就填几行<br>&lt;a href="你的链接"&gt; &lt;img src="图片链接" width="100%" /&gt;&lt;/a&gt;'));
     $form->addInput($slidercode);
+    
+    $infpage = new Typecho_Widget_Helper_Form_Element_Radio('infpage',
+        array('able' => _t('启用'),
+            'disable' => _t('禁止'),
+        ),
+        'disable', _t('首页文章无限加载'), _t(''));
+    $form->addInput($infpage);
 
 
     //侧边栏
@@ -257,8 +264,8 @@ function slout() {
     if (!empty($options->slidercode)) {
         $text = $options->slidercode;
     }else{
-        $text='<a target="_blank" href="https://github.com/hiCasper/Typecho-theme-DUX"><img src="http://www.daqianduan.com/wp-content/uploads/2014/11/hs-xiu.jpg"></a>
-        <a target="_blank" href="https://github.com/hiCasper/Typecho-theme-DUX"><img src="http://www.daqianduan.com/wp-content/uploads/2014/11/hs-xiu.jpg"></a>';
+        $text='<a target="_blank" href="https://github.com/hiCasper/Typecho-theme-DUX"><img src="'. $options->themeUrl .'/img/banner.png"></a>
+               <a target="_blank" href="https://github.com/hiCasper/Typecho-theme-DUX"><img src="'. $options->themeUrl .'/img/banner.png"></a>';
     }
     $t_arr = explode('
 ', $text);
@@ -283,7 +290,7 @@ function fa_ico($type, $num) {
             return $fa_arr[$num];
         }
         else {
-            $text='<i class="fa fa-book"></i>';
+            $text='';
             return $text;
         }
     }
@@ -294,7 +301,7 @@ function fa_ico($type, $num) {
             return $fa_arr[$num];
         }
         else {
-            $text='<i class="fa fa-file-text-o"></i>';
+            $text='';
             return $text;
         }
     }
@@ -309,7 +316,6 @@ function sitebar_ad($obj) {
         $text="https://github.com/hiCasper/Typecho-theme-DUX\nDUX主题 新一代主题\nDUX for Typecho";
     }
     $b_arr = explode("\n", $text);
-
     return $b_arr;
 }
 
