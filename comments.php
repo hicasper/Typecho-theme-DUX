@@ -12,11 +12,11 @@ function threadedComments($comments, $options) {
 
     $commentLevelClass = $comments->levels > 0 ? ' comment-child' : ' comment-parent';
 
-    if ($comments->url) {
-        $author = '<a href="' . $comments->url . '" target="_blank"' . ' rel="external nofollow">' . $comments->author . '</a>';
-    } else {
-        $author = $comments->author;
-    }
+    //if ($comments->url) {
+    //    $author = '<a href="' . $comments->url . '" target="_blank"' . ' rel="external nofollow">' . $comments->author . '</a>';
+    //} else {
+    //    $author = $comments->author;
+    //}
 ?>
 
     <li id="<?php $comments->theId(); ?>" class="comment byuser comment-author-admin bypostauthor depth-<?php echo $comments->levels+1; ?> comment-body<?php
@@ -40,7 +40,7 @@ function threadedComments($comments, $options) {
         <div class="comt-main" id="div-<?php $comments->theId(); ?>">
             <p><?php $comments->content(); ?></p>
             <div class="comt-meta">
-                <span class="comt-author"><?php echo $comments->author; ?></span> (<?php $comments->date('Y-m-d'); ?>) <?php $comments->reply('回复'); ?>
+                <span class="comt-author"><?php echo $comments->author(); ?></span> <?php $comments->date('Y-m-d'); ?>&nbsp;&nbsp;&nbsp;&nbsp;<?php $comments->reply('回复'); ?>
             </div>
         </div>
     <?php if ($comments->children) { ?><ul class="children"><?php $comments->threadedComments($options); ?></ul><?php } ?>
