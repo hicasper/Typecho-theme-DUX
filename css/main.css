@@ -778,9 +778,8 @@ body {
 .excerpt time, .excerpt .pv, .excerpt .pc, .excerpt .author {
 	margin-right: 20px;
 }
-
 .excerpt .note {
-	font-size: 12px;
+	font-size: 14px;
 	color: #999;
 	word-wrap: break-word;
 	line-height: 20px;
@@ -798,7 +797,7 @@ body {
 
 .excerpt .meta a {
 	color: #999;
-	// text-decoration: underline;
+	/* text-decoration: underline; */
 }
 
 .excerpt .meta a:hover {
@@ -2515,42 +2514,6 @@ body {
 	background-color: #FF5E52;
 }
 
-.widget_ui_textasb a.style03 {
-	color: #5CB85C;
-}
-
-.widget_ui_textasb a.style03:hover {
-	border-color: #5CB85C
-}
-
-.widget_ui_textasb a.style03 strong {
-	background-color: #5CB85C;
-}
-
-.widget_ui_textasb a.style04 {
-	color: #C35BFF;
-}
-
-.widget_ui_textasb a.style04:hover {
-	border-color: #C35BFF;
-}
-
-.widget_ui_textasb a.style04 strong {
-	background-color: #C35BFF;
-}
-
-.widget_ui_textasb a.style05 {
-	color: #45B6F7;
-}
-
-.widget_ui_textasb a.style05:hover {
-	border-color: #45B6F7;
-}
-
-.widget_ui_textasb a.style05 strong {
-	background-color: #45B6F7;
-}
-
 /* widget_ui_tags ======================================================================================================== */
 .widget_ui_tags .items {
 	overflow: hidden;
@@ -2737,7 +2700,7 @@ body {
 	position: relative;
 	z-index: 9;
 	clear: both;
-	padding: 40px 30px;
+	padding: 30px 30px;
 	font-size: 12px;
 	line-height: 12px;
 	text-align: center;
@@ -3480,6 +3443,7 @@ pre.prettyprint.linenums ol li {
 
 .copyright {
 	line-height: 1.5;
+	margin: 1em;
 }
 
 .wp-video, .mejs-layer, video, embed, iframe {
@@ -4358,7 +4322,7 @@ pre.prettyprint.linenums ol li {
 	}
 
 	.excerpt .pc {
-		display: none
+		display: none;
 	}
 
 	.excerpt .pv {

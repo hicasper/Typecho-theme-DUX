@@ -69,7 +69,6 @@ function themeConfig($form) {
         'disable', _t('首页文章无限加载'), _t(''));
     $form->addInput($infpage);
 
-
     //侧边栏
     $sidebarBlock = new Typecho_Widget_Helper_Form_Element_Checkbox('sidebarBlock',
         array('ShowRecentPosts' => _t('最新文章'),
@@ -83,6 +82,7 @@ function themeConfig($form) {
     $sidebarAD = new Typecho_Widget_Helper_Form_Element_Textarea('sidebarAD', NULL, NULL, _t('侧边栏推荐位红色'), _t('请按固定格式填写，否则会造成错乱，可添加多个，第一行是广告的链接地址，第二行是广告标题，第三行是广告内容<br>例如:<br>http://themebetter.com/theme/dux<br>DUX主题 新一代主题<br>DUX Wordpress主题是大前端当前使用主题，是大前端积累多年Wordpress主题经验设计而成；更加扁平的风格和干净白色的架构会让网站显得内涵而出色...'));
     $form->addInput($sidebarAD);
 
+    
     $sitebar_fu = new Typecho_Widget_Helper_Form_Element_Text('sitebar_fu', NULL, NULL, _t('侧边栏浮动'), _t('请输入要浮动的侧边栏模块序号并使用英文逗号分隔，例如1,3 代表第1和第3块侧边栏会浮动'));
     $form->addInput($sitebar_fu);
 
@@ -177,20 +177,19 @@ function get_post_view($archive) {
 
 
 /*Typecho 24小时发布文章数量*/
-function get_recent_posts_number($days = 1,$display = true)
-{
-$db = Typecho_Db::get();
-$today = time() + 3600 * 8;
-$daysago = $today - ($days * 24 * 60 * 60);
-$total_posts = $db->fetchObject($db->select(array('COUNT(cid)' => 'num'))
-->from('table.contents')
-->orWhere('created < ? AND created > ?', $today,$daysago)
-->where('type = ? AND status = ? AND password IS NULL', 'post', 'publish'))->num;
-if($display) {
-echo $total_posts;
-} else {
-return $total_posts;
-}
+function get_recent_posts_number($days = 1,$display = true){
+    $db = Typecho_Db::get();
+    $today = time() + 3600 * 8;
+    $daysago = $today - ($days * 24 * 60 * 60);
+    $total_posts = $db->fetchObject($db->select(array('COUNT(cid)' => 'num'))
+        ->from('table.contents')
+        ->orWhere('created < ? AND created > ?', $today,$daysago)
+        ->where('type = ? AND status = ? AND password IS NULL', 'post', 'publish'))->num;
+    if($display) {
+        echo $total_posts;
+    } else {
+        return $total_posts;
+    }
 }
 
 //缩略图调用
@@ -237,10 +236,10 @@ function hotpost() {
     }
     //return $tjids;
     $defaults = array(
-    'cid' => $tjids,
-    'before' => '',
-    'after' => '',
-    'xformat' => '<article class="excerpt-minic excerpt-minic-index"><h2><span class="red">【置顶】</span><a href="{permalink}" title="{title}">{title}</a></h2><p class="note">{content}...</p></article>'
+        'cid' => $tjids,
+        'before' => '',
+        'after' => '',
+        'xformat' => '<article class="excerpt-minic excerpt-minic-index"><h2><span class="red">【置顶】</span><a href="{permalink}" title="{title}">{title}</a></h2><p class="note">{content}...</p></article>'
     );
     $db = Typecho_Db::get();
 
@@ -252,11 +251,11 @@ function hotpost() {
     $result = $db->fetchAll($sql);
     echo $defaults['before'];
     foreach($result as $val){
-    $val = Typecho_Widget::widget('Widget_Abstract_Contents')->filter($val);
-    echo str_replace(array('{permalink}', '{title}','{content}'),array($val['permalink'], $val['title'],substr($val['text'],0,250)), $defaults['xformat']);
+        $val = Typecho_Widget::widget('Widget_Abstract_Contents')->filter($val);
+        echo str_replace(array('{permalink}', '{title}','{content}'),array($val['permalink'], $val['title'],substr($val['text'],0,250)), $defaults['xformat']);
     }
     echo $defaults['after'];
-    }
+}
 
 //幻灯片输出
 function slout() {
@@ -318,7 +317,5 @@ function sitebar_ad($obj) {
     $b_arr = explode("\n", $text);
     return $b_arr;
 }
-
-
 
 ?>

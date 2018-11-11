@@ -12,11 +12,11 @@ function threadedComments($comments, $options) {
 
     $commentLevelClass = $comments->levels > 0 ? ' comment-child' : ' comment-parent';
 
-    //if ($comments->url) {
-    //    $author = '<a href="' . $comments->url . '" target="_blank"' . ' rel="external nofollow">' . $comments->author . '</a>';
-    //} else {
-    //    $author = $comments->author;
-    //}
+    if ($comments->url) {
+        $author = '<a href="' . $comments->url . '" target="_blank"' . ' rel="external nofollow">' . $comments->author . '</a>';
+    } else {
+        $author = $comments->author;
+    }
 ?>
 
     <li id="<?php $comments->theId(); ?>" class="comment byuser comment-author-admin bypostauthor depth-<?php echo $comments->levels+1; ?> comment-body<?php
@@ -36,11 +36,11 @@ function threadedComments($comments, $options) {
     $hash = md5(strtolower($comments->mail));
     $avatar = $host . $url . $hash . '?s=' . $size . '&r=' . $rating . '&d=mm';
 ?>
-        <div class="comt-avatar"><img alt="" data-src="<?php echo $avatar ?>" srcset="<?php echo $avatar ?> 2x" class="avatar photo" height="50" width="50" src="<?php $aoptions = Typecho_Widget::widget('Widget_Options'); $aoptions ->themeUrl("img/avatar-default.png"); ?>"></div>
+        <div class="comt-avatar"><img alt="" data-src="<?php echo $avatar; ?>" srcset="<?php echo $avatar; ?> 2x" class="avatar photo" height="50" width="50" src="<?php $aoptions = Typecho_Widget::widget('Widget_Options'); $aoptions ->themeUrl("img/avatar-default.png"); ?>"></div>
         <div class="comt-main" id="div-<?php $comments->theId(); ?>">
             <p><?php $comments->content(); ?></p>
             <div class="comt-meta">
-                <span class="comt-author"><?php echo $comments->author(); ?></span> <?php $comments->date('Y-m-d'); ?>&nbsp;&nbsp;&nbsp;&nbsp;<?php $comments->reply('回复'); ?>
+                <span class="comt-author"><?php echo $author; ?></span> <?php $comments->date('Y-m-d'); ?>&nbsp;&nbsp;&nbsp;&nbsp;<?php $comments->reply('回复'); ?>
             </div>
         </div>
     <?php if ($comments->children) { ?><ul class="children"><?php $comments->threadedComments($options); ?></ul><?php } ?>
