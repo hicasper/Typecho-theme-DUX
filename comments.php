@@ -38,7 +38,7 @@ function threadedComments($comments, $options) {
 ?>
         <div class="comt-avatar"><img alt="" data-src="<?php echo $avatar; ?>" srcset="<?php echo $avatar; ?> 2x" class="avatar photo" height="50" width="50" src="<?php $aoptions = Typecho_Widget::widget('Widget_Options'); $aoptions ->themeUrl("img/avatar-default.png"); ?>"></div>
         <div class="comt-main" id="div-<?php $comments->theId(); ?>">
-            <p><?php $comments->content(); ?></p>
+            <?php $comments->content(); ?>
             <div class="comt-meta">
                 <span class="comt-author"><?php echo $author; ?></span> <?php $comments->date('Y-m-d'); ?>&nbsp;&nbsp;&nbsp;&nbsp;<?php $comments->reply('回复'); ?>
             </div>
