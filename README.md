@@ -14,4 +14,9 @@ http://blog.hicasper.com
 
 ![Typecho-theme-DUX.png](https://i.loli.net/2018/09/22/5ba5d0e56f3c9.png)
 
+# 赞助作者
+如果觉得此作品对你有帮助，可以打赏一下作者，感谢您的帮助！
+
+![donate.png](https://i.loli.net/2018/12/31/5c299a19abdea.png)
+
 >本主题仅基于爱好修改，使用时请尊重原作者大前端版权。
