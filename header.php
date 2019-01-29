@@ -81,7 +81,7 @@
     </header>
     <div class="site-search">
         <div class="container">
-            <form method="get" class="site-search-form" action="<?php $this->options ->siteUrl(); ?>">
+            <form method="post" class="site-search-form" action="<?php $this->options ->siteUrl(); ?>">
                 <input class="search-input" name="s" type="text" placeholder="输入关键字" value="">
                 <button class="search-btn" type="submit"><i class="fa fa-search"></i></button>
             </form>
