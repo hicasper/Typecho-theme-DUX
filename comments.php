@@ -91,8 +91,8 @@ function threadedComments($comments, $options) {
 <?php if ($comments->have()) : ?>
     <div id="postcomments">
         <ol class="commentlist"><?php $comments->listComments(array('before' =>  '','after'  =>  '')); ?></ol>
-        <div class="pagenav">
-            <?php $comments->pageNav('←','→','2','...'); ?>
+        <div class="pagination">
+            <?php $comments->pageNav('←','→',2,'...',array('wrapTag' => 'ul')); ?>
         </div>
     </div>
 <?php endif; ?>
