@@ -55,12 +55,6 @@
             <div class="brand"><?php if($this->options->logotext && !empty($this->options->logotext) ): ?><?php $this->options->logotext(); ?><?php endif; ?></div>
             <ul class="site-nav site-navbar">
                 <li><a href="<?php $this->options ->siteUrl(); ?>"><i class="fa fa-home"></i>首页</a></li>
-
-<!--                
-<?php $this->widget('Widget_Metas_Category_List')->to($cats); $i=0; while($cats->next()): ?>
-                <li><a href="<?php $cats->permalink()?>"><?php echo fa_ico(1,$i); ?> <?php $cats->name()?></a></li>
-<?php $i++; endwhile; ?>
- -->
                 
 <?php if ($this->options->categorymenu == 'able'): ?>
                 <li>
