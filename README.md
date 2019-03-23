@@ -1,6 +1,7 @@
 # Typecho-theme-DUX
 
->Forked from https://coding.net/u/Arco-X/p/DUX-for-Typecho/git
+最初版>Forked from https://coding.net/u/Arco-X/p/DUX-for-Typecho/git
+本版>Forked from https://github.com/hiCasper/Typecho-theme-DUX 的修改版
 
 一款基于大前端DUX for Wordpress主题修改而来的主题。
 
@@ -10,13 +11,10 @@
 - 增加了一些小功能
 
 # 预览地址
-http://blog.hicasper.com
+https://hpk.me
 
-![Typecho-theme-DUX.png](https://i.loli.net/2018/09/22/5ba5d0e56f3c9.png)
+![Typecho-theme-DUX.png](https://ww1.sinaimg.cn/large/006Fzy5igy1g1cny9vm3hj30z30nqaes.jpg
+)
 
-# 赞助作者
-如果觉得此作品对你有帮助，可以打赏一下作者，感谢您的帮助！
 
-![donate.png](https://i.loli.net/2018/12/31/5c299a19abdea.png)
-
->本主题仅基于爱好修改，使用时请尊重原作者大前端版权。
+>本主题仅基于爱好修改，使用时请尊重原作者及后续完善者版权。
