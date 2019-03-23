@@ -21,6 +21,7 @@
 
 # 预览地址
 https://hpk.me
+http://blog.hicasper.com
 
 ![Typecho-theme-DUX.png](https://ww1.sinaimg.cn/large/006Fzy5igy1g1cny9vm3hj30z30nqaes.jpg
 )
