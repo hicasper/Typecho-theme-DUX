@@ -1,6 +1,7 @@
 # Typecho-theme-DUX
 
 最初版>Forked from https://coding.net/u/Arco-X/p/DUX-for-Typecho/git
+
 本版>Forked from https://github.com/hiCasper/Typecho-theme-DUX 的修改版
 
 一款基于大前端DUX for Wordpress主题修改而来的主题。
