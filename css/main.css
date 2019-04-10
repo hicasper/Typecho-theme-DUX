@@ -1666,7 +1666,7 @@ body {
 	margin: 0;
 	list-style: none;
 	text-align: left;
-	display: inline-flex;
+	display: inline;
 }
 
 .comt-comterinfo li {
