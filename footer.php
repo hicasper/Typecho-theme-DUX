@@ -26,7 +26,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
             <div class="copyright">
                 <p>
                     &copy; <?php echo date("Y"); ?> <a href="<?php $this->options ->siteUrl(); ?>"><?php $this->options->title();?></a>
-                    <?php if($this->options->miitbeian): ?> | <a href="http://www.miitbeian.gov.cn/" target="_blank" rel="nofollow"><?php $this->options->miitbeian(); ?></a><?php endif; ?>
+                    <?php if($this->options->miitbeian): ?> | <a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow"><?php $this->options->miitbeian(); ?></a><?php endif; ?>
                     <br>
                     Powered by <a href="http://www.typecho.org/" target="_blank">Typecho</a> |
                     Theme <a href="https://github.com/hiCasper/Typecho-theme-DUX" target="_blank">DUX</a>
