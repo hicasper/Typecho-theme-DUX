@@ -23,9 +23,18 @@ function themeConfig($form) {
         'disable', _t('DNS预解析加速'), _t('默认禁止，启用则会对CDN资源和Gravatar进行加速'));
     $form->addInput($DnsPrefetch);
 
+    $categorymenu = new Typecho_Widget_Helper_Form_Element_Radio('categorymenu',
+        array('able' => _t('折叠'),
+            'disable' => _t('展开'),
+        ),
+        'able', _t('折叠首页文章分类菜单'), _t(''));
+    $form->addInput($categorymenu);
+    
+
     $fatext = new Typecho_Widget_Helper_Form_Element_Textarea('fatext', NULL, NULL, _t('顶部导航栏分类fa图标'), _t('顶部导航栏分类fa图标，&lt;i class="fa fa-plug"&gt;&lt;/i&gt; 格式一行一个<br>和导航条分类菜单项按顺序匹配,用法参见<a href="http://www.fontawesome.com.cn/faicons/" target="_blank">FA图标CSS分类参考</a>'));
     $form->addInput($fatext);
 
+    
     $pagemenu = new Typecho_Widget_Helper_Form_Element_Radio('pagemenu',
         array('able' => _t('折叠'),
             'disable' => _t('展开'),

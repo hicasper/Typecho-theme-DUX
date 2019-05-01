@@ -55,10 +55,24 @@
             <div class="brand"><?php if($this->options->logotext && !empty($this->options->logotext) ): ?><?php $this->options->logotext(); ?><?php endif; ?></div>
             <ul class="site-nav site-navbar">
                 <li><a href="<?php $this->options ->siteUrl(); ?>"><i class="fa fa-home"></i>首页</a></li>
+                
+<?php if ($this->options->categorymenu == 'able'): ?>
+                <li>
+                    <a><i class="fa fa-folder-open"></i>文章分类</a>
+                    <ul class="sub-menu">
+<?php $this->widget('Widget_Metas_Category_List')->to($cats); $i=0; while($cats->next()): ?>
+                <li><a href="<?php $cats->permalink()?>"><?php $cats->name()?></a></li>
+<?php $i++; endwhile; ?>
+                    </ul>
+                </li>
+<?php else: ?>
 <?php $this->widget('Widget_Metas_Category_List')->to($cats); $i=0; while($cats->next()): ?>
                 <li><a href="<?php $cats->permalink()?>"><?php echo fa_ico(1,$i); ?> <?php $cats->name()?></a></li>
 <?php $i++; endwhile; ?>
-<?php if ($this->options->pagemenu == 'able'): ?>
+<?php endif; ?>                
+                
+                
+<?php if ($this->options->pagemenu == 'able'): ?>                   
                 <li>
                     <a><i class="fa fa-file-text-o"></i>独立页面</a>
                     <ul class="sub-menu">
@@ -72,6 +86,8 @@
                 <li><a href="<?php $pages->permalink(); ?>"><?php echo fa_ico(2,$i); ?> <?php $pages->title(); ?></a></li>
 <?php $i++; endwhile; ?>
 <?php endif; ?>
+                
+                
                 <li class="navto-search">
                     <a href="javascript:;" class="search-show active"><i class="fa fa-search"></i></a>
                 </li>
