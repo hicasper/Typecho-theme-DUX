@@ -85,7 +85,6 @@ function threadedComments($comments, $options) {
                     </div>
 
                 </div>
-<?php if(!$this->user->hasLogin() && ($this->remember('author',true) == "" || $this->remember('mail',true) == "")): ?>
                 <div class="comt-comterinfo" id="comment-author-info" >
                     <ul>
                         <li class="form-inline"><label class="hide" for="author">昵称</label><input class="ipt" type="text" name="author" id="author" value="<?php $this->remember('author'); ?>" tabindex="2" placeholder="昵称（必填）" required><span class="text-muted"></span></li>
@@ -93,7 +92,6 @@ function threadedComments($comments, $options) {
                         <li class="form-inline"><label class="hide" for="url">网址</label><input class="ipt" type="text" name="url" id="url" value="<?php $this->remember('url'); ?>" tabindex="4" placeholder="网址"><span class="text-muted"></span></li>
                     </ul>
                 </div>
-<?php endif; ?>
             </div>
         </form>
 <?php } ?>
