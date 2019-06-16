@@ -70,13 +70,8 @@ function threadedComments($comments, $options) {
                    <p><?php $comments->cancelReply('<font color="##FF5151"><br>取消</font>'); ?></p>
                 </div>
                 <div class="comt-box">
-<font size="3" color="#66B3FF">
-<?php if($this->user->hasLogin()): ?>
-                    <?php $this->user->screenName(); ?>
-                   <?php elseif($this->remember('author',true) != "" && $this->remember('mail',true) != ""): ?><?php $this->remember('author'); ?><?php endif; ?>
-</font>
+                    <font size="3" color="#66B3FF"><?php if($this->user->hasLogin()): ?><?php $this->user->screenName(); ?><?php elseif($this->remember('author',true) != "" && $this->remember('mail',true) != ""): ?><?php $this->remember('author'); ?><?php endif; ?></font>                    
                     <textarea placeholder="欢迎在此评论， be nice & cool." class="input-block-level comt-area" name="text" id="comment" cols="100%" rows="3" tabindex="1" ></textarea>
-
                     <div class="comt-ctrl">
                         <div class="comt-tips"></div>
                         <button type="submit" name="submit" id="submit" tabindex="5">提交评论</button>
@@ -85,13 +80,15 @@ function threadedComments($comments, $options) {
                     </div>
 
                 </div>
-                <div class="comt-comterinfo" id="comment-author-info" >
+<?php if(!$this->user->hasLogin()): ?>
+                <div class="comt-comterinfo" id="comment-author-info" <?php if($this->remember('author',true) != "" && $this->remember('mail',true) != ""): ?>style="display:none;"<?php endif; ?> >
                     <ul>
                         <li class="form-inline"><label class="hide" for="author">昵称</label><input class="ipt" type="text" name="author" id="author" value="<?php $this->remember('author'); ?>" tabindex="2" placeholder="昵称（必填）" required><span class="text-muted"></span></li>
                         <li class="form-inline"><label class="hide" for="mail">邮箱</label><input class="ipt" type="text" name="mail" id="mail" value="<?php $this->remember('mail'); ?>" tabindex="3" placeholder="邮箱（必填）" <?php if ($this->options->commentsRequireMail): ?> required<?php endif; ?>><span class="text-muted"></span></li>
                         <li class="form-inline"><label class="hide" for="url">网址</label><input class="ipt" type="text" name="url" id="url" value="<?php $this->remember('url'); ?>" tabindex="4" placeholder="网址"><span class="text-muted"></span></li>
                     </ul>
                 </div>
+<?php endif; ?>
             </div>
         </form>
 <?php } ?>
