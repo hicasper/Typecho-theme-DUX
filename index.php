@@ -42,7 +42,7 @@ $this->need('header.php');?>
                     <time><i class="fa fa-clock-o"></i><?php $this->date('Y-m-d'); ?></time>
                     <span class="author"><i class="fa fa-user"></i><?php $this->author(); ?></span>
                     <span class="pv"><i class="fa fa-eye"></i>阅读(<?php get_post_view($this) ?>)</span>
-                    <a class="pc" href="<?php $this->permalink() ?>#respond"><i class="fa fa-comments-o"></i>评论(<?php $this->commentsNum('0', '1', '%d'); ?>)</a>
+                    <a class="pc" href="<?php $this->permalink() ?>#comments"><i class="fa fa-comments-o"></i>评论(<?php $this->commentsNum('0', '1', '%d'); ?>)</a>
                 </p>
                 <p class="note"><?php $this->excerpt(111, '...'); ?></p>
             </article>
