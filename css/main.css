@@ -1014,6 +1014,11 @@ body {
 	word-wrap: break-word;
 }
 
+.article-content img {
+	margin:0 auto;
+	display: block;
+}
+
 .article-content table {
 	border-top: solid 1px #ddd;
 	border-left: solid 1px #ddd;
