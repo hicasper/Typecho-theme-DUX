@@ -776,7 +776,7 @@ body {
 }
 
 .excerpt time, .excerpt .pv, .excerpt .pc, .excerpt .author {
-	margin-right: 20px;
+	margin-right: 1em;
 }
 .excerpt .note {
 	font-size: 13px;
@@ -852,7 +852,7 @@ body {
 }
 
 .excerpt-minic time, .excerpt-minic .pv, .excerpt-minic .pc, .excerpt-minic .author {
-	margin-right: 20px;
+	margin-right: 1em;
 }
 
 .excerpt-minic .meta {
