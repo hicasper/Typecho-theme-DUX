@@ -715,6 +715,7 @@ body {
 .excerpt .thumb {
 	width: 220px;
 	height: 150px;
+    object-fit: cover;
 }
 
 .excerpt header {
