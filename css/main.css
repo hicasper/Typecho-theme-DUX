@@ -715,7 +715,7 @@ body {
 .excerpt .thumb {
 	width: 220px;
 	height: 150px;
-    object-fit: cover;
+	object-fit: cover;
 }
 
 .excerpt header {
@@ -1008,7 +1008,8 @@ body {
 
 .article-content p {
 	margin-bottom: 20px;
-	word-wrap: break-word
+	word-wrap: break-word;
+	text-indent: 2em;
 }
 
 .article-content pre {
