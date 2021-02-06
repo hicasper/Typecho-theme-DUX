@@ -27,14 +27,14 @@ function themeConfig($form) {
         array('able' => _t('折叠'),
             'disable' => _t('展开'),
         ),
-        'able', _t('折叠首页文章分类菜单'), _t(''));
+        'able', _t('折叠首页文章分类菜单  (若需要子分类菜单则选择展开)'), _t(''));
     $form->addInput($categorymenu);
-    
+
 
     $fatext = new Typecho_Widget_Helper_Form_Element_Textarea('fatext', NULL, NULL, _t('顶部导航栏分类fa图标'), _t('顶部导航栏分类fa图标，&lt;i class="fa fa-plug"&gt;&lt;/i&gt; 格式一行一个<br>和导航条分类菜单项按顺序匹配,用法参见<a href="http://www.fontawesome.com.cn/faicons/" target="_blank">FA图标CSS分类参考</a>'));
     $form->addInput($fatext);
 
-    
+
     $pagemenu = new Typecho_Widget_Helper_Form_Element_Radio('pagemenu',
         array('able' => _t('折叠'),
             'disable' => _t('展开'),
@@ -70,7 +70,7 @@ function themeConfig($form) {
 
     $slidercode = new Typecho_Widget_Helper_Form_Element_Textarea('slidercode', NULL, NULL, _t('幻灯片代码'), _t('请按以下格式填写，展示几个就填几行<br>&lt;a href="你的链接"&gt; &lt;img src="图片链接" width="100%" /&gt;&lt;/a&gt;'));
     $form->addInput($slidercode);
-    
+
     $infpage = new Typecho_Widget_Helper_Form_Element_Radio('infpage',
         array('able' => _t('启用'),
             'disable' => _t('禁止'),
@@ -91,7 +91,7 @@ function themeConfig($form) {
     $sidebarAD = new Typecho_Widget_Helper_Form_Element_Textarea('sidebarAD', NULL, NULL, _t('侧边栏推荐位红色'), _t('请按固定格式填写，否则会造成错乱，可添加多个，第一行是广告的链接地址，第二行是广告标题，第三行是广告内容<br>例如:<br>http://themebetter.com/theme/dux<br>DUX主题 新一代主题<br>DUX Wordpress主题是大前端当前使用主题，是大前端积累多年Wordpress主题经验设计而成；更加扁平的风格和干净白色的架构会让网站显得内涵而出色...'));
     $form->addInput($sidebarAD);
 
-    
+
     $sitebar_fu = new Typecho_Widget_Helper_Form_Element_Text('sitebar_fu', NULL, NULL, _t('侧边栏浮动'), _t('请输入要浮动的侧边栏模块序号并使用英文逗号分隔，例如1,3 代表第1和第3块侧边栏会浮动'));
     $form->addInput($sitebar_fu);
 
