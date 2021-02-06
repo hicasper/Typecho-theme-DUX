@@ -73,7 +73,7 @@
                 <li><a href="<?php $cats->permalink()?>"> <?php echo fa_ico(1,$i); ?> <?php $cats->name()?></a></li>
 <?php } else { ?>
                 <li>
-                    <a href="<?php $cats->permalink(); ?>"> <?php echo fa_ico(1,$i); ?> <?php $cats->name(); ?></a>
+                    <a href="<?php $cats->permalink(); ?>"> <?php echo fa_ico(1,$i); ?> <?php $cats->name(); ?> <i class="fa fa-angle-down"></i></a>
                     <ul class="sub-menu">
 <?php foreach ($children as $mid) { ?>
 <?php $child = $cats->getCategory($mid); ?>

@@ -327,6 +327,7 @@ body {
 
 .site-navbar .fa-angle-down {
 	width: 11px;
+	font-weight: 700;
 }
 
 .search-on .site-navbar li.navto-search a {
@@ -458,7 +459,7 @@ body {
 #bdcs .bdcs-search-form-input{float:left;color:#999;border:solid 1px #ddd;width:85%;height: 50px;padding: 4px 12px;border-right: none;font-size: 16px;border-radius: 2px 0 0 2px;outline: none}
 #bdcs .bdcs-search-form-input:focus{border-color: #45B6F7;}
 #bdcs .bdcs-search-form-submit {color:#fff;border: none;background: #45B6F7;height: 50px;font-size: 16px;padding: 0 12px;border-radius: 0 2px 2px 0;width: 15%;outline: none}
-#bdcs .bdcs-search-form-submit:hover, 
+#bdcs .bdcs-search-form-submit:hover,
 #bdcs .bdcs-search-form-submit:focus{color:#fff;opacity: 0.85;filter:alpha(opacity=85);}*/
 
 .search .site-search {
@@ -2156,7 +2157,7 @@ body {
 	border: none;
 }
 
-.widget ul:before, 
+.widget ul:before,
 .widget ul:after {
 	display: table;
 	content: "";
@@ -2171,8 +2172,8 @@ body {
 	margin-bottom: 13px
 }
 
-.widget_views li, 
-.widget_rss li, 
+.widget_views li,
+.widget_rss li,
 .widget_recent_entries li {
 	border-bottom: solid 1px #eee;
 	padding: 8px 15px;
@@ -2757,9 +2758,9 @@ body {
 	margin: 5px 0;
 }
 
-.footer-menu .fa-weibo, 
-.footer-menu .fa-tencent-weibo, 
-.footer-menu .fa-envelope-o, 
+.footer-menu .fa-weibo,
+.footer-menu .fa-tencent-weibo,
+.footer-menu .fa-envelope-o,
 .footer-menu .fa-rss {
 	width: 12px;
 	text-align: center;
@@ -3347,7 +3348,7 @@ pre.prettyprint.linenums ol li {
 }
 
 .prettyprint .pun,
-.prettyprint .opn, 
+.prettyprint .opn,
 .prettyprint .clo {
 	color: #F8F8F2;
 }
@@ -3356,19 +3357,19 @@ pre.prettyprint.linenums ol li {
 	color: #dc322f;
 }
 
-.prettyprint .str, 
+.prettyprint .str,
 .prettyprint .atv {
 	color: #E6DB74;
 }
 
-.prettyprint .kwd, 
+.prettyprint .kwd,
 .prettyprint .tag {
 	color: #F92659;
 }
 
-.prettyprint .typ, 
-.prettyprint .atn, 
-.prettyprint .dec, 
+.prettyprint .typ,
+.prettyprint .atn,
+.prettyprint .dec,
 .prettyprint .var {
 	color: #A6E22E;
 }
@@ -4099,7 +4100,7 @@ pre.prettyprint.linenums ol li {
 	.article-header {
 		margin-bottom: 10px;
 	}
-	
+
 	/*#focusslide{margin: -11px -10px 10px;}*/
 	/*.carousel-inner .item img{border-radius: 0}*/
 	.carousel-indicators {
