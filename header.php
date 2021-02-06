@@ -68,7 +68,7 @@
 <?php else: ?>
 <?php $this->widget('Widget_Metas_Category_List')->to($cats); $i=0; while($cats->next()): ?>
 <?php if ($cats->levels == 0): ?>
-<?php $children = $cats->getAllChildren($cats->mid); $i++; ?>
+<?php $children = $cats->getAllChildren($cats->mid);?>
 <?php if (empty($children)) { ?>
                 <li><a href="<?php $cats->permalink()?>"> <?php echo fa_ico(1,$i); ?> <?php $cats->name()?></a></li>
 <?php } else { ?>
@@ -82,7 +82,7 @@
                     </ul>
                 </li>
 <?php } ?>
-<?php endif; ?>
+<?php $i++; endif; ?>
 <?php endwhile; ?>
 <?php endif; ?>
 
